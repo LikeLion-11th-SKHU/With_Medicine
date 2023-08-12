@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Free_board
+
+from .models import CustomUser
 # Register your models here.
 
-admin.site.register(Free_board)
+admin.site.register(CustomUser)

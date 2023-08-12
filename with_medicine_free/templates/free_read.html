@@ -9,8 +9,61 @@
 </head>
 
 <body>
-{% block content %}
+    {% block content %}
     <h1>Free_read</h1>
- {% endblock %}
+    <hr>
+  
+    <a href="{% url 'free_create' %}">글 작성하기</a>
+
+    <form class="form-inline my-2 my-lg-0" action="{% url 'free_search' %}" method="post">
+            {% csrf_token %}
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{q}}">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+<!-- read_list -->
+        <table>
+                <tr>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                </tr>
+            {% for free_board in free_board %}
+                <tr>
+                    <td>
+                        <a href="{% url 'free_detail' free_board.id %}">{{ free_board.title }}</a>
+                    </td>
+                    <!-- 추후에 td user정보로 변경할 것 -->
+                    <td>더미데이터</td>
+                    <td>{{ free_board.pub_date }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+<!-- read_list_end -->
+
+<!-- 페이징처리 -->
+        <div>
+    <!-- default/back_page_number 설정-->
+            {% if free_board.has_previous %}
+            <a href="?page=1"">처음으로</a>
+            <a href="?page={{ free_board.previous_page_number }}">이전</a>
+            {% endif %}
+    <!-- page_list 설정-->
+            {% for page in free_board.paginator.page_range %}
+            {% if page >= free_board.number|add:-3 and page <= free_board.number|add:3 %} 
+            {% if page == free_board.number %}
+                <span><a href="?page={{ page }}">{{ page }}</a></span>
+            {% else %}
+                <a href="?page={{ page }}">{{ page }}</a>
+            {% endif %}
+            {% endif %}
+            {% endfor %} 
+    <!-- next_page 설정 -->
+            {% if free_board.has_next %}
+            <a href="?page={{free_board.next_page_number }}">다음</a>
+            <a href="?page={{ free_board.paginator.num_pages }}">끝으로</a>
+            {% endif %}
+            </div>
+<!-- 페이징 끝 -->
+{% endblock %}
 </body>
 </html>
