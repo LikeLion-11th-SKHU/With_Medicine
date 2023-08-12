@@ -83,3 +83,13 @@ def search(request):
     
     else:
         return render(request, 'search.html', {'review_board':review_board})
+
+def review_like(request, id):
+    if request.user.is_authenticated:
+        post = get_object_or_404(Review_board, id=id)
+        if post.like_users.filter(id=request.user.id).exists():
+            post.like_users.remove(request.user)
+        else:
+            post.like_users.add(request.user)
+        return redirect('review_detail', id=id)
+    return redirect('login')

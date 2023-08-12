@@ -33,7 +33,7 @@
                         <a href="{% url 'free_detail' free_board.id %}">{{ free_board.title }}</a>
                     </td>
                     <!-- 추후에 td user정보로 변경할 것 -->
-                    <td>더미데이터</td>
+                    <td>{{ free_board.user }}</td>
                     <td>{{ free_board.pub_date }}</td>
                 </tr>
             {% endfor %}

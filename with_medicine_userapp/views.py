@@ -13,7 +13,7 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             auth.login(request, user)  # 회원가입 후 바로 로그인?
-            return redirect('main')        
+            return redirect('signup_welcome')        
     else:
         form = CustomUserCreationForm()
     return render(request, 'signup.html', {'form' : form})
@@ -65,3 +65,8 @@ def change_password(request):
     else:
         form = PasswordChangeForm(request.user)
     return render(request, 'change_password.html', {'form':form})
+
+def signup_welcome(request):
+    return render(request, 'signup_welcome.html')
+
+       

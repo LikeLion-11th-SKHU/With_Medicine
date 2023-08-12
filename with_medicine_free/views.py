@@ -87,3 +87,13 @@ def free_search(request):
     else:
         return render(request, 'free_search.html', {'free_board':free_board})
 
+def free_like(request, id):
+    if request.user.is_authenticated:
+        post = get_object_or_404(Free_board, id=id)
+        if post.like_users.filter(id=request.user.id).exists():
+            post.like_users.remove(request.user)
+        else:
+            post.like_users.add(request.user)
+        return redirect('free_detail', id=id)
+    return redirect('login')
+    

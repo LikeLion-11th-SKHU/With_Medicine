@@ -32,7 +32,7 @@
                 <a href="{% url 'review_detail' review_board.id %}">{{ review_board.title }}</a>
             </td>
             <!-- 추후에 td user정보로 변경할 것 -->
-            <td>더미데이터</td>
+            <td>{{ review_board.user }}</td>
             <td>{{ review_board.pub_date }}</td>
         </tr>
     {% endfor %}
