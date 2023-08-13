@@ -5,9 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type = "text/css"> <!-- css 파일 연결 -->
    
     {% block title %}
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" type = "text/css"> <!-- css 파일 연결 -->
     <title>Main</title>
     {% endblock %}
 </head>
@@ -23,7 +23,10 @@
         <span id="login-signup-text">
     {% if user.is_active %}
         {{ user.username }} 님 안녕하세요 <a href="{% url 'logout' %}">로그아웃</a>
-    {% else %}
+        
+        <div class="mypage_icon"><a href="{% url 'user_detail' user.pk %}"><img src="/with_medicine_app/static/img/test.png" alt=""></a></div>
+       
+        {% else %}
         <a class="menulink" href="{% url 'signup' %}">회원가입</a>
         <a class="menulink" href="{% url 'login' %}">로그인</a>
     {% endif %}
