@@ -1,0 +1,206 @@
+body {
+    margin: 0; /* 페이지의 기본 마진 제거 */
+    font-family: Arial, sans-serif; /* 원하는 폰트 설정 */
+}
+#topmenu {
+    width: 100%; /* 너비를 화면 가득 차도록 설정 */
+    background-color: #ffffff; /* 배경색 설정 */
+    height: 45px; /* 높이 조정 */
+    margin-left: 220px;
+    margin-top: 20px; /* 상단과 메뉴 사이 간격 조정*/
+}
+#topmenu ul {
+    margin: 0; /* 내비게이션 메뉴의 기본 마진 제거 */
+    padding: 0; /* 내비게이션 메뉴의 기본 패딩 제거 */
+    list-style: none; /* 리스트 스타일 제거 */
+    display: flex; /* 내비게이션 메뉴를 가로로 배치하기 위한 flex 설정 */
+    justify-content: center; /* 메뉴 항목 가운데로 정렬 */
+    align-items: center; /* 메뉴 항목 수직 중앙으로 정렬 */
+    height: 100%; /* 내비게이션 메뉴 높이를 상위 컨테이너와 동일하게 설정 */
+}
+#topmenu li {
+    margin: 0 10px; /* 각 메뉴 항목의 좌우 간격 조정 */
+}
+#topmenu .menulink {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    padding: 8px 25px; /* 메뉴 항목의 내부 여백 조정 */
+   
+}
+#topmenu .menulink:hover {
+    color: rgb(0 102 255); /* 마우스 오버 시 글자색 변경 */
+}
+
+/* 회원가입&로그인 메뉴 스타일 */
+#login-signup {
+    margin-left: 350px;
+    display: flex;
+    align-items: center; /* '회원가입|로그인' 세로, 가운데 정렬 */
+}
+#login-signup-text {
+    font-size: 10px;
+    margin-right: 5px; /* 메뉴와 텍스트 간격 조정 */
+}
+
+/*member sign in*/
+*{
+    box-sizing: border-box; /*전체에 박스사이징*/
+    outline: none; /*focus 했을때 테두리 나오게 */
+}
+h2{text-align: center;}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:14px;
+    background-color: #fff;
+    line-height: 1.5em;
+    color : #222;
+    margin: 0;
+}
+
+.member{
+    /* 회원가입 전체 폼 조정 */
+    width: 60%;
+    height: 700px;
+    margin: auto; /*중앙 정렬*/
+    padding: 0 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.form-field-01 input{
+    /* 아이디 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.form-field-02 input{
+    /* 비밀번호 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.form-field-03 input{
+    /* 비밀번호확인 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.form-field-04 input{
+    /* 이름 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.form-field-05 input{
+    /* 나이 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.form-field-05 input{
+    /* 나이 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.form-field-06 input{
+    /* 성별 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.form-field-07 input{
+    /* 이메일 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.member b{
+    /* border: 1px solid #000; */
+    display: block; /*수직 정렬하기 */
+    margin-bottom: 5px;
+}
+
+.form-field-08 input{
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+@media (max-width:768px) {
+    .member{
+        width: 100%;
+    }
+}
+
+button{
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #0064FF;
+    color:#fff
+
+}
+
+/* footer css */
+.f_box{
+    background-color: rgb(32,88,169);
+    padding: 5px;
+    text-align:left;
+    display: inline-block;
+    width: 100%;
+    color: #ffffff;
+    position: relative;
+    margin-top: 200px;
+ }
+ #bottom_menu ul{
+    display: flex;   
+    margin-left: 170px;
+    margin-bottom: 15px;
+    list-style: none; /* 리스트 스타일 제거 */
+ }
+ #bottom_menu li{
+    margin: 8px;
+ }
+ .items_block{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-right: 145px;
+ }
+ h3{
+    margin-bottom: 10px;
+    margin-left: 50px;
+ }
+ .items{
+    margin: 0px 30px 30px 30px;
+ }
+.items li{
+    margin: 10px;
+    list-style: none;
+    margin-right: 80px;
+}

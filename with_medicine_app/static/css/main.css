@@ -1,0 +1,136 @@
+body {
+    margin: 0; /* 페이지의 기본 마진 제거 */
+    font-family: Arial, sans-serif; /* 원하는 폰트 설정 */
+}
+#topmenu {
+    width: 100%; /* 너비를 화면 가득 차도록 설정 */
+    background-color: #ffffff; /* 배경색 설정 */
+    height: 45px; /* 높이 조정 */
+    margin-left: 220px;
+    margin-top: 20px; /* 상단과 메뉴 사이 간격 조정*/
+}
+#topmenu ul {
+    margin: 0; /* 내비게이션 메뉴의 기본 마진 제거 */
+    padding: 0; /* 내비게이션 메뉴의 기본 패딩 제거 */
+    list-style: none; /* 리스트 스타일 제거 */
+    display: flex; /* 내비게이션 메뉴를 가로로 배치하기 위한 flex 설정 */
+    justify-content: center; /* 메뉴 항목 가운데로 정렬 */
+    align-items: center; /* 메뉴 항목 수직 중앙으로 정렬 */
+    height: 100%; /* 내비게이션 메뉴 높이를 상위 컨테이너와 동일하게 설정 */
+}
+#topmenu li {
+    margin: 0 10px; /* 각 메뉴 항목의 좌우 간격 조정 */
+}
+#topmenu .menulink {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    padding: 8px 25px; /* 메뉴 항목의 내부 여백 조정 */
+   
+}
+#topmenu .menulink:hover {
+    color: rgb(0 102 255); /* 마우스 오버 시 글자색 변경 */
+}
+
+/* 회원가입&로그인 메뉴 스타일 */
+#login-signup {
+    margin-left: 350px;
+    display: flex;
+    align-items: center; /* '회원가입|로그인' 세로, 가운데 정렬 */
+}
+#login-signup-text {
+    font-size: 10px;
+    margin-right: 5px; /* 메뉴와 텍스트 간격 조정 */
+}
+
+/* 메인배너 이미지 스타일 */
+#main-banner {
+    text-align: center; /* 이미지를 가운데 정렬 */
+    padding: 20px 0; /* 위아래로 30px 패딩 추가 */
+}
+#main-banner img {
+    width: 100%; /* 이미지를 부모 요소의 100% 너비로 설정 */
+    height: 450px;
+    max-width: 100%;
+    opacity: 0.75; /* 이미지 불투명도 75% */
+}
+
+/* 이미지 가운데 텍스트*/
+#main-banner .banner-text {
+    position: absolute; /* 텍스트 위치 고정 */
+    top: 35%; /* 위에서 35% 밀어내기 */
+    left: 50%; /* 왼쪽에서 50% 밀어내기 */
+    transform: translate(-50%, -50%); /* 텍스트 수평 수직 중앙 정렬 */
+    color: rgb(68 68 68);
+    font-size: 30px;
+    font-weight: bold;
+}
+#search {
+    position: relative;
+    margin-left: 650px;
+    width: 600px;
+}
+
+#search .search-form {
+    position: relative;
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    background-color: rgb(209, 229, 254);
+}
+
+#search .search-form input[type="text"] {
+    flex: 1; /* 입력창이 남은 공간을 차지하도록 설정 */
+    padding: 0 13px; /* 입력창 내부 여백 설정 */
+    border: none; /* 테두리 제거 */
+    background-color: transparent; /* 배경색 투명하게 설정 */
+    font-size: 14px; /* 폰트 사이즈 설정 */
+    color: rgb(68, 68, 68); /* 텍스트 색상 설정 */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+/* footer css */
+.f_box{
+    background-color: rgb(32,88,169);
+    padding: 5px;
+    text-align:left;
+    display: inline-block;
+    width: 100%;
+    color: #ffffff;
+ }
+ #bottom_menu ul{
+    display: flex;   
+    margin-left: 170px;
+    margin-bottom: 15px;
+    list-style: none; /* 리스트 스타일 제거 */
+ }
+ #bottom_menu li{
+    margin: 8px;
+ }
+ .items_block{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-right: 145px;
+ }
+ h3{
+    margin-bottom: 10px;
+    margin-left: 50px;
+ }
+ .items{
+    margin: 0px 30px 30px 30px;
+ }
+.items li{
+    margin: 10px;
+    list-style: none;
+    margin-right: 80px;
+}
+h1{color: blueviolet;}

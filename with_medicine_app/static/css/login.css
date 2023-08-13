@@ -1,0 +1,208 @@
+body {
+    margin: 0; /* 페이지의 기본 마진 제거 */
+    font-family: Arial, sans-serif; /* 원하는 폰트 설정 */
+}
+#topmenu {
+    width: 100%; /* 너비를 화면 가득 차도록 설정 */
+    background-color: #ffffff; /* 배경색 설정 */
+    height: 45px; /* 높이 조정 */
+    margin-left: 220px;
+    margin-top: 20px; /* 상단과 메뉴 사이 간격 조정*/
+}
+#topmenu ul {
+    margin: 0; /* 내비게이션 메뉴의 기본 마진 제거 */
+    padding: 0; /* 내비게이션 메뉴의 기본 패딩 제거 */
+    list-style: none; /* 리스트 스타일 제거 */
+    display: flex; /* 내비게이션 메뉴를 가로로 배치하기 위한 flex 설정 */
+    justify-content: center; /* 메뉴 항목 가운데로 정렬 */
+    align-items: center; /* 메뉴 항목 수직 중앙으로 정렬 */
+    height: 100%; /* 내비게이션 메뉴 높이를 상위 컨테이너와 동일하게 설정 */
+}
+#topmenu li {
+    margin: 0 10px; /* 각 메뉴 항목의 좌우 간격 조정 */
+}
+#topmenu .menulink {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    padding: 8px 25px; /* 메뉴 항목의 내부 여백 조정 */
+   
+}
+#topmenu .menulink:hover {
+    color: rgb(0 102 255); /* 마우스 오버 시 글자색 변경 */
+}
+
+/* 회원가입&로그인 메뉴 스타일 */
+#login-signup {
+    margin-left: 350px;
+    display: flex;
+    align-items: center; /* '회원가입|로그인' 세로, 가운데 정렬 */
+}
+#login-signup-text {
+    font-size: 10px;
+    margin-right: 5px; /* 메뉴와 텍스트 간격 조정 */
+}
+
+title {
+    /* 로그인 제목 */
+    color: #000;
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+  }
+.wrap{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#ffffff;
+}
+.login-form{
+     /* 로그인 전체 폼 형태 */
+    width: 60%;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.input-field-01 input::placeholder {
+     /* 적용이 안돼... */
+    color: black;
+    content: "아이디";
+}
+
+.input-field-01{
+    /* 아이디 조정 */
+    margin-top: 20px;
+    width: 80%;
+}
+
+.input-field-01 input{
+    /* 아이디 input type 형태 모양 잡음 */
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+    
+    
+    
+}
+
+.input-field-02 input::placeholder::before {
+    /* 적용이 안돼... */
+    color: black;
+    content: "비밀번호";
+}
+.input-field-02{
+    /* 비밀번호 조정 */
+    margin-top: 20px;
+    width: 80%;
+}
+
+.input-field-02 input{
+    /* 비밀번호 input type 형태 모양 잡음 (아이디랑 똑같음)*/
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.login_etc {
+    /* 로그인 상태 유지 버튼 */
+    padding: 20px;
+    width: 80%;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+  }
+
+button{
+    /* 버튼모양 */
+    width: 100%;
+    height: 30px;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    background-color: #0064FF;
+    color: white;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+  }
+  .btn{
+    margin-top: 10px;
+    width: 80%;
+  }
+
+  .login_etc02{
+    /* 버튼 밑에 있는 요소들 정리 */
+    padding: 10px;
+    width: 80%;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+  }
+  .login_etc02 a{
+    text-decoration: none;
+    color: black;
+  }
+  
+
+  /* footer css */
+.f_box{
+    background-color: rgb(32,88,169);
+    padding: 5px;
+    text-align:left;
+    display: inline-block;
+    width: 100%;
+    color: #ffffff;
+    position: relative;
+    margin-top: 200px;
+ }
+ #bottom_menu ul{
+    display: flex;   
+    margin-left: 170px;
+    margin-bottom: 15px;
+    list-style: none; /* 리스트 스타일 제거 */
+ }
+ #bottom_menu li{
+    margin: 8px;
+ }
+ .items_block{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-right: 145px;
+ }
+ h3{
+    margin-bottom: 10px;
+    margin-left: 50px;
+ }
+ .items{
+    margin: 0px 30px 30px 30px;
+ }
+.items li{
+    margin: 10px;
+    list-style: none;
+    margin-right: 80px;
+}

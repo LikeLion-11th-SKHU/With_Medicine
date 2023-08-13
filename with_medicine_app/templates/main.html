@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    {% block title %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type = "text/css"> <!-- css 파일 연결 -->
+    <title>Main</title>
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <nav id="topmenu"> <!--nav 메뉴바-->
+            <ul>
+                <li><a class="menulink" href="{% url 'main' %}">Home</a></li>
+                <li><a class="menulink" href="{% url 'free_read' %}">자유게시판</a></li>
+                <li><a class="menulink" href="{% url 'review_read' %}">리뷰게시판</a></li>
+                
+     <div id="login-signup"> <!---회원가입&로그인 작성 칸-->
+        <span id="login-signup-text">
+    {% if user.is_active %}
+        {{ user.username }} 님 안녕하세요 <a href="{% url 'logout' %}">로그아웃</a>
+    {% else %}
+        <a class="menulink" href="{% url 'signup' %}">회원가입</a>
+        <a class="menulink" href="{% url 'login' %}">로그인</a>
+    {% endif %}
+    </span>
+    </div>
+    </ul>
+    </nav>
+    </header>
+    
+    <h1></h1>
+{% block content %}
+    <h1>Main</h1> 
+
+    {% comment %} <form method="GET">
+        {% csrf_token %}
+        <input type="text" name="search_query" placeholder="검색어를 입력하세요.">
+        <a href="{% url 'search_items' %}"><button type="submit">Search</button></a>
+    </form> {% endcomment %}
+
+    {% comment %} <form class="form-inline my-2 my-lg-0" action="{% url 'search_items' %}" method="post">
+        {% csrf_token %}
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{q}}">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> {% endcomment %}
+
+{% endblock %}
+</body>
+</html>

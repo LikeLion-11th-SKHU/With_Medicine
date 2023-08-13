@@ -1,0 +1,106 @@
+{% extends 'main.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    {% block title %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>login</title>
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <nav id="topmenu"> <!--nav 메뉴바-->
+            <ul>
+                <li><a class="menulink" href="{% url 'main' %}">Home</a></li>
+                <li><a class="menulink" href="{% url 'free_read' %}">자유게시판</a></li>
+                <li><a class="menulink" href="{% url 'review_read' %}">리뷰게시판</a></li>
+            </ul>
+        </nav>
+    </header>      
+     {% block content %}
+
+     <main>  
+        <div class="wrap">  
+        <form method="POST" class="login-form"> <!-- login-form 클래스 추가(지우지 말기) -->
+            {% csrf_token %}
+            <h2 class="title">로그인</h2>
+            <div class="input-field-01"> <!-- 아이디 input 필드를 감싸는 div 추가(지우지 말기) -->
+                
+                {{ form.username }}
+                
+                
+            </div>
+            <div class="input-field-02"> <!-- 비밀번호 input 필드를 감싸는 div 추가(지우지 말기) -->
+                
+                {{ user.password1 }} <!-- password1은 안됨 한번 물어보기 -->
+            </div>
+            <div class="login_etc">
+                <div class="checkbox">
+                <input type="checkbox" name="check" id=""> 로그인 상태 유지
+                </div>
+            </div>
+            <div class="btn">
+                <button type = "submit">로그인</button>
+            </div>
+            <!--그 외-->
+            <div class="login_etc02">
+                <div class="signup_btn">
+                    <a href="signup.html">회원가입</a>
+                </div>
+                <div class="find_id_btn">
+                    <a href="find_id.html">아이디 찾기</a>
+                </div>
+                <div class="find_password_btn">
+                    <a href="find_password.html">비밀번호 찾기</a>
+                </div>
+            </div>
+        </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="f_box">
+        <nav id="bottom_menu">
+            <ul>
+                <li>약과함께 소개</li>
+                <li>개인정보처리방침</li>
+                <li>저작권 정보</li>
+                <li>이용 안내</li>
+            </ul>
+        </nav>
+        <div class="items_block">
+            <div class="items">
+                <h3>문의정보</h3>
+                <ul>
+                    <li>123-1234</li>
+                    <li>10:00 - 18:00(Lunch 12:00 - 13:00)</li>
+                </ul>
+            </div> <!-- items -->
+            <div class="items">
+                <h3>약과함께</h3>
+                <ul>
+                    <li >주소 : 경기도 용인시 기흥구 동백대로 123</li>
+                    <li>전화 : 031-123-1234</li>
+                    <li>팩스 : 031-123-1234</li>
+                    <li>이메일 : 123-12-12345</li>
+                </ul>
+            </div> <!-- items -->
+            <div class="items">
+                <h3>입금 정보</h3>
+                <ul>
+                    <li>국민 123-123-123456</li>
+                    <li>anyonemore</li>
+                </ul>
+            </div> <!-- items -->   
+        </div>      
+        </div> <!-- box -->
+    </footer>
+    {% endblock %}
+    
+    
+</body>
