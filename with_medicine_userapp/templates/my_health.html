@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    <title>My_health</title>
+{% endblock %}
+
+{% block content %}
+    <h1>My_health Page</h1>
+    <hr>
+     
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">저장</button>
+    </form>
+
+    {% if health_info %}
+        <p>키 : {{ health_info.height }}</p>
+        <p>몸무게: {{ health_info.weight }}</p>
+        <p>기타 병력: {{ health_info.medical_history }}</p>
+    {% endif %}
+{% endblock %}
