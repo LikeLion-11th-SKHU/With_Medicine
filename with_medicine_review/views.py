@@ -27,7 +27,9 @@ def review_create(request):
         return render(request, 'review_create.html', {'form': form})
     
 def review_detail(request, id):  
-    review_board = get_object_or_404(Review_board, id = id)  
+    review_board = get_object_or_404(Review_board, id = id) 
+    review_board.hits += 1
+    review_board.save() 
     if request.method == 'POST':
         form = Review_board_CommentForm(request.POST)
         if form.is_valid():

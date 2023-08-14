@@ -11,6 +11,7 @@
     <h3>제목 : {{ free_board.title }}</h3>
     <p>작성일 : {{ free_board.pub_date }}</p>
     <p>내용 : {{ free_board.body }}</p>
+    <p>조회수 : {{ free_board.hits }}</p>
     <br>
     <a href="{% url 'free_update' free_board.id %}">글 수정하기</a>
     <br>

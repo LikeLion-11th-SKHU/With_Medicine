@@ -9,12 +9,12 @@ from django.core.paginator import Paginator
 
 # Create your views here.
 def free_read(request):
-    free_board = Free_board.objects.all().order_by('-id')
+    free_boards = Free_board.objects.all().order_by('-id')
     
-    paginator = Paginator(free_board, 5)
+    paginator = Paginator(free_boards, 5)
     page = request.GET.get('page')
-    free_board = paginator.get_page(page)
-    return render(request, 'free_read.html', {'free_board':free_board})
+    free_boards = paginator.get_page(page)
+    return render(request, 'free_read.html', {'free_boards':free_boards})
 
 def free_create(request):
     if request.method == 'POST':
@@ -30,6 +30,10 @@ def free_create(request):
     
 def free_detail(request, id):  
     free_board = get_object_or_404(Free_board, id = id)  
+    
+    free_board.hits += 1
+    free_board.save()
+    
     if request.method == 'POST':
         form = Free_board_CommentForm(request.POST)
         if form.is_valid():

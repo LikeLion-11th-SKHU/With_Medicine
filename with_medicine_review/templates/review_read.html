@@ -25,6 +25,7 @@
             <th>제목</th>
             <th>작성자</th>
             <th>작성일</th>
+            <th>조회수</th>
         </tr>
     {% for review_board in review_board %}
         <tr>
@@ -34,6 +35,7 @@
             <!-- 추후에 td user정보로 변경할 것 -->
             <td>{{ review_board.user }}</td>
             <td>{{ review_board.pub_date }}</td>
+            <td>{{ review_board.hits }}</td>
         </tr>
     {% endfor %}
 </table>

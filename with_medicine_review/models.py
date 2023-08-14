@@ -8,6 +8,8 @@ class Review_board(models.Model):
     body = models.TextField()
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=1, related_name="r_posts")
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='review_posts', blank=True)
+    hits = models.IntegerField(default=0)
+   
 
     def __str__(self):
         return self.title
