@@ -5,6 +5,9 @@ from django.contrib import auth
 from .models import CustomUser
 from django.contrib.auth import update_session_auth_hash  # 비밀번호 변경 시 로그아웃 되지 않도록
 from .forms import CustomUserCreationForm, CustomUserChangeForm
+from with_medicine_free.models import Free_board
+from with_medicine_review.models import  Review_board
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def signup(request):
@@ -69,4 +72,10 @@ def change_password(request):
 def signup_welcome(request):
     return render(request, 'signup_welcome.html')
 
-       
+@login_required
+def my_posts(request):
+    user = request.user
+    free_my_posts = Free_board.objects.filter(user=user).order_by('-pub_date')
+    review_my_posts = Review_board.objects.filter(user=user).order_by('-pub_date')
+    return render(request, 'my_posts.html', {'free_my_posts':free_my_posts, 'review_my_posts': review_my_posts})
+

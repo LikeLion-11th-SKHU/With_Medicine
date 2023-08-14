@@ -17,6 +17,8 @@
     <h3>gender : {{ user.gender }}</h3>
     <h3>phone_number : {{ user.phone_number }}</h3>
 
+    <a href="{% url 'my_posts' %}">내 글 보기</a>
+
     {% if request.user == user %}
         <a href="{% url 'user_update' %}">회원 수정</a>
         <a href="{% url 'change_password' %}">비밀번호 수정</a>

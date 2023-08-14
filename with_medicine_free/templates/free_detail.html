@@ -16,6 +16,10 @@
     <br>
     <a href="{% url 'free_delete' free_board.id %}">글 삭제하기</a>
 
+    <!--조회수 기능-->
+    <p>조회수 : {{ free_board.hits }}</p>
+    
+    
     <!--좋아요 기능-->
     <div>
         <form action="{% url 'free_like' free_board.id %}" method='POST'>
