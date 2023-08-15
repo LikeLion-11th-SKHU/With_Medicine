@@ -31,5 +31,6 @@ urlpatterns = [
     path('', include('with_medicine_userapp.urls')),
     path('', include('with_medicine_free.urls')),
     path('', include('with_medicine_review.urls')),
-    
+    path('', include('with_medicine_med.urls')),
+    path('', include('with_medicine_specialist.urls')),
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

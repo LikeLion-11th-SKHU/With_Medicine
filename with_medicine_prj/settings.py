@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'with_medicine_free',
     'with_medicine_review',
     'with_medicine_userapp',
+    'with_medicine_med',
+    'with_medicine_specialist',
 ]
 
 MIDDLEWARE = [
