@@ -4,6 +4,7 @@ from django.utils import timezone
 from .models import Review_board, Review_Comment
 from django.db.models import Q
 from django.core.paginator import Paginator 
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -14,6 +15,7 @@ def review_read(request):
     review_board = paginator.get_page(page)
     return render(request, 'review_read.html', {'review_board': review_board})
 
+@login_required
 def review_create(request):
     if request.method == 'POST':
         form = Review_board_Form(request.POST)

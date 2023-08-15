@@ -26,6 +26,7 @@
             <th>작성자</th>
             <th>작성일</th>
             <th>조회수</th>
+            <th>좋아요</th>
         </tr>
     {% for review_board in review_board %}
         <tr>
@@ -36,6 +37,7 @@
             <td>{{ review_board.user }}</td>
             <td>{{ review_board.pub_date }}</td>
             <td>{{ review_board.hits }}</td>
+            <td>{{ review_board.like_users.all|length }}</td>
         </tr>
     {% endfor %}
 </table>

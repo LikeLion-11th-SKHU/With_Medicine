@@ -148,3 +148,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_URL)  # 이미지 등의 미디어 파
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 
 AUTH_USER_MODEL = 'with_medicine_userapp.CustomUser'
+
+LOGIN_URL = '/login/'

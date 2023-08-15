@@ -27,6 +27,7 @@
                     <th>작성자</th>
                     <th>작성일</th>
                     <th>조회수</th>
+                    <th>좋아요</th>
                 </tr>
             {% for free_boards in free_boards %}
                 <tr>
@@ -37,6 +38,7 @@
                     <td>{{ free_boards.user }}</td>
                     <td>{{ free_boards.pub_date }}</td>
                     <td>{{ free_boards.hits }}</td>
+                    <td>{{ free_boards.like_users.all|length }}</td>
                 </tr>
             {% endfor %}
         </table>

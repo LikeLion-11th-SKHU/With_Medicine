@@ -6,6 +6,7 @@ from django.views.generic import ListView
 from django.contrib import messages
 from django.db.models import Q
 from django.core.paginator import Paginator 
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def free_read(request):
@@ -16,6 +17,7 @@ def free_read(request):
     free_boards = paginator.get_page(page)
     return render(request, 'free_read.html', {'free_boards':free_boards})
 
+@login_required
 def free_create(request):
     if request.method == 'POST':
         form = Free_board_Form(request.POST)
