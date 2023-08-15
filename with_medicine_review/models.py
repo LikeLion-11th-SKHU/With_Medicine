@@ -13,10 +13,7 @@ class Review_board(models.Model):
     def __str__(self):
         return self.title
     
-    @property
-    def r_update_counter(self):
-        self.hits = self.hits + 1
-        self.save()
+
     
 class Review_Comment(models.Model):
     review_board_id = models.ForeignKey(Review_board, on_delete=models.CASCADE, related_name='comment')

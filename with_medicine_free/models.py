@@ -15,10 +15,6 @@ class Free_board(models.Model):
     def __str__(self):
         return self.title
     
-    @property
-    def f_update_counter(self):
-        self.hits += 1
-        self.save()
 
 class Free_Comment(models.Model):
     free_board_id = models.ForeignKey(Free_board, on_delete=models.CASCADE, related_name='comment')
