@@ -64,6 +64,9 @@
             {% endfor %}
     </table>   
      
+    <!--자유, 리뷰 게시판 이미지..?-->
+    {% comment %} <img src={% if free_board.image %}"{{ free_board.image.url }}"{% else %}""{% endif %} 
+    width = "300" alt=""> {% endcomment %}
 {% endblock %}
 </body>
 </html>

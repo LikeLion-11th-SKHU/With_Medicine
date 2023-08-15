@@ -21,6 +21,7 @@ def review_create(request):
         form = Review_board_Form(request.POST, request.FILES)
         if form.is_valid():
             form = form.save(commit = False)
+            form.user = request.user
             form.pub_date = timezone.now()
             form.save()
             return redirect('review_read')
@@ -36,6 +37,7 @@ def review_detail(request, id):
         form = Review_board_CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit = False)
+            comment.user = request.user
             comment.review_board_id = review_board
             comment.save()
             return redirect('review_detail', id)

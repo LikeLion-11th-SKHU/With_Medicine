@@ -22,6 +22,7 @@ def free_create(request):
         form = Free_board_Form(request.POST, request.FILES)
         if form.is_valid():
             form = form.save(commit = False)
+            form.user = request.user
             form.pub_date = timezone.now()
             form.save()
             return redirect('free_read')
@@ -39,6 +40,7 @@ def free_detail(request, id):
         form = Free_board_CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit = False)
+            comment.user = request.user
             comment.free_board_id = free_board
             comment.save()
             return redirect('free_detail', id)

@@ -17,6 +17,8 @@ class Free_board(models.Model):
 class Free_Comment(models.Model):
     free_board_id = models.ForeignKey(Free_board, on_delete=models.CASCADE, related_name='comment')
     b_text = models.CharField(max_length=30)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, default=1, related_name="l_posts_comment")
+    image = models.ImageField(blank=True)
     
     def __str__(self):
         return self.b_text 
