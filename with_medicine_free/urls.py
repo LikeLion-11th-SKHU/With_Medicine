@@ -1,5 +1,7 @@
 from django.urls import path
 from with_medicine_free import views  
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('free_read/', views.free_read, name='free_read'),
@@ -12,4 +14,4 @@ urlpatterns = [
     path('free_comment_update/<int:id>/<int:com_id>/', views.free_comment_update, name="free_comment_update"),
     path('free_search/', views.free_search, name='free_search'),
     path('<int:id>/free_like/', views.free_like, name='free_like'), 
-] 
+]

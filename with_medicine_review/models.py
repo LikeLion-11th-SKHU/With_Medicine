@@ -9,6 +9,7 @@ class Review_board(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=1, related_name="r_posts")
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='review_posts', blank=True)
     hits = models.IntegerField(default=0)
+    image = models.ImageField(blank=True)
    
 
     def __str__(self):

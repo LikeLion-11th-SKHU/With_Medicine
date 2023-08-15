@@ -14,7 +14,7 @@ from .models import HealthInfo
 # Create your views here.
 def signup(request):
     if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST, request.FILES)
         if form.is_valid():
             user = form.save()
             auth.login(request, user)  # 회원가입 후 바로 로그인?

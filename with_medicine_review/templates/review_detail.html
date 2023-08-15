@@ -7,8 +7,12 @@
 {% block content %}
     <h1>Review_Detail</h1>
     <hr>
+    <img src={% if user.image %}"{{ user.image.url }}"{% else %}"https://i.stack.imgur.com/34AD2.jpg"{% endif %} 
+            width="150rem" style="border-radius: 50%;" alt="profile_img">
     <p>작성자 : {{ review_board.user }}</p>
     <h3>제목 : {{ review_board.title }}</h3>
+    <img src={% if review_board.image %}"{{ review_board.image.url }}"{% else %}""{% endif %} 
+    width = "300" alt="">
     <p>작성일 : {{ review_board.pub_date }}</p>
     <p>내용 : {{ review_board.body }}</p>
     <p>조회수 : {{ review_board.hits }}</p>
@@ -36,11 +40,16 @@
         </form>
       </div>
 
+
     {% for comment in review_board.comment.all %}
+    <img src={% if user.image %}"{{ user.image.url }}"{% else %}"https://i.stack.imgur.com/34AD2.jpg"{% endif %} 
+    width="30" height="30" style="border-radius: 50%;" alt="profile_img">
+    <p>{{ review_board.user }}</p>
     <p>댓글:{{ comment }}</p>
     <br>
     <a href="{% url 'review_comment_delete' review_board.id comment.id %}">댓글 삭제하기</a>
     <a href="{% url 'review_comment_update' review_board.id comment.id %}">댓글 수정하기</a>
+    <hr>
     {% endfor %}
  
     <form method = "POST" action = "{% url 'review_detail' review_board.id %}">

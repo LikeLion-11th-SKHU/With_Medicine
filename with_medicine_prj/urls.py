@@ -25,9 +25,9 @@ import with_medicine_app.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', with_medicine_app.views.main, name = 'main'),
-    #path('search_items/', with_medicine_app.views.search_items, name='search_items'),
+    #path('', with_medicine_app.views.main, name = 'main'),
     
+    path('', include('with_medicine_app.urls')),
     path('', include('with_medicine_userapp.urls')),
     path('', include('with_medicine_free.urls')),
     path('', include('with_medicine_review.urls')),

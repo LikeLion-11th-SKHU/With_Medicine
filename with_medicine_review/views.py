@@ -18,7 +18,7 @@ def review_read(request):
 @login_required
 def review_create(request):
     if request.method == 'POST':
-        form = Review_board_Form(request.POST)
+        form = Review_board_Form(request.POST, request.FILES)
         if form.is_valid():
             form = form.save(commit = False)
             form.pub_date = timezone.now()

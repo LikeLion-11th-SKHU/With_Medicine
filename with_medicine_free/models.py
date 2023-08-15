@@ -10,6 +10,7 @@ class Free_board(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, default=1, related_name="l_posts")
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_posts', blank=True)
     hits = models.IntegerField(default=0)
+    image = models.ImageField(blank=True)
     def __str__(self):
         return self.title
 

@@ -10,8 +10,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def free_read(request):
-    free_boards = Free_board.objects.all().order_by('-id')
-    
+    free_boards = Free_board.objects.all().order_by('-id') 
     paginator = Paginator(free_boards, 5)
     page = request.GET.get('page')
     free_boards = paginator.get_page(page)
@@ -20,7 +19,7 @@ def free_read(request):
 @login_required
 def free_create(request):
     if request.method == 'POST':
-        form = Free_board_Form(request.POST)
+        form = Free_board_Form(request.POST, request.FILES)
         if form.is_valid():
             form = form.save(commit = False)
             form.pub_date = timezone.now()

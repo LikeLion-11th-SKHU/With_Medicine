@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Profile Page</h1>
+    <h1>Profile Page</h1> 
     <hr>
     <img src={% if user.image %}"{{ user.image.url }}"{% else %}"https://i.stack.imgur.com/34AD2.jpg"{% endif %} 
             width="150rem" style="border-radius: 50%;" alt="">
-
+            
     <h1>ID : {{ user.username }}</h1>
     <h3>Name : {{ user.name }}</h3>
     <h3>Age : {{ user.age }}</h3>
@@ -21,7 +21,7 @@
     <a href="{% url 'my_posts' %}">내 글 보기</a>
 
     {% if request.user == user %}
-        <a href="{% url 'user_update' %}">회원 수정</a>
+        <a href="{% url 'user_update' %}">회원 수정</a> 
         <a href="{% url 'change_password' %}">비밀번호 수정</a>
         <form action="{% url 'user_delete' %}" method="POST">
             {% csrf_token %}

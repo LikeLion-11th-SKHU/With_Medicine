@@ -7,8 +7,12 @@
 {% block content %}
     <h1>Free_Detail</h1>
     <hr>
+    <img src={% if user.image %}"{{ user.image.url }}"{% else %}"https://i.stack.imgur.com/34AD2.jpg"{% endif %} 
+            width="150rem" style="border-radius: 50%;" alt="">
     <p>작성자 : {{ free_board.user }}</p>
     <h3>제목 : {{ free_board.title }}</h3>
+    <img src={% if free_board.image %}"{{ free_board.image.url }}"{% else %}""{% endif %} 
+    width = "300" alt="">
     <p>작성일 : {{ free_board.pub_date }}</p>
     <p>내용 : {{ free_board.body }}</p>
     <p>조회수 : {{ free_board.hits }}</p>
@@ -36,11 +40,15 @@
       </div>
 
 {% for comment in free_board.comment.all %}
+    <img src={% if user.image %}"{{ user.image.url }}"{% else %}"https://i.stack.imgur.com/34AD2.jpg"{% endif %} 
+    width="30" height="30" style="border-radius: 50%;" alt="profile_img">
+    <p>{{ free_board.user }}</p>
     <p>댓글:{{ comment }}</p>
     <br>
     <a href="{% url 'free_comment_delete' free_board.id comment.id %}">댓글 삭제하기</a>
     <a href="{% url 'free_comment_update' free_board.id comment.id %}">댓글 수정하기</a>
-    {% endfor %}
+    <hr>
+{% endfor %}
  
 <form method = "POST" action = "{% url 'free_detail' free_board.id %}">
     {% csrf_token %}
