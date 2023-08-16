@@ -86,3 +86,18 @@
     margin-top: 10px;
     color: #444;
 }
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .search-form-med {
+        width: 90%;
+        margin-left: 0;
+        padding: 0 20px;
+        margin-top: 30px; /* 상단과의 간격 조정 */
+    }
+
+    .search-form-med input[type="search"] {
+        width: 95%;
+        font-size: 14px;
+    }
+}

@@ -32,7 +32,6 @@
 
         <!-- 게시판 리스트 목록 -->
         <table class="sub_news" cellspacing="0" summary="게시판의 글 제목 리스트">
-            <caption> 게시판 리스트 </caption>
             <colgroup>
                     <col width="80">
                     <col width="300">
@@ -52,7 +51,9 @@
                 <!-- 게시판 등록글 tr-->
                 <tr>     
                 {% for free_board in free_board reversed %} 
+                
                     <td class="title">
+                        {% csrf_token %}
                     <a href="{% url 'free_detail' free_board.id %}"> {{ free_board.title }}</a></td>
                     <td class="body">{{ free_board.body }}</td>
                     <td class="name">{{ user.username }}</td>

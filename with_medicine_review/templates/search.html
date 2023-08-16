@@ -1,4 +1,16 @@
 {% extends 'review_read.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <link rel="stylesheet" href="{% static 'css/review_search.css' %}" type = "text/css"> <!-- css 파일 연결 -->
+    {% endblock %}
+    <title>review_read</title>
+</head>
 
 {% block content %}
 
@@ -7,6 +19,16 @@
         <h1>검색 결과가 없습니다</h1>
 
     {% else %}
+
+    <div id="search-review">
+        <div id="search-02">
+            <form class="search-form" method="post">
+                {% csrf_token %}
+                <input type="search" placeholder="의약품명, 증상, 성분명을 입력하세요." aria-label="Search" name="q" value="{{q}}">
+                <button class="btn-review-success" type="submit">검색</button>
+            </form> 
+        </div>
+    </div>
 
         {% for review_board in review_board.all %}
         <div class="container"> 

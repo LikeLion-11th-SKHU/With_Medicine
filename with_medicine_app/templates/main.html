@@ -15,7 +15,7 @@
 <body>
     <header>
         <nav id="topmenu"> <!--nav 메뉴바-->
-            <img src="../static/img/01.png">
+            <img src="../static/img/02.png">
             <ul>
                 <li><a class="menulink" href="{% url 'main' %}">Home</a></li>
                 <li><a class="menulink" href="{% url 'medicines' %}">약 모아보기</a></li>
@@ -54,7 +54,6 @@
     </div>
 
 
-
 <!-- 약 페이지 -->
 <div id="grid-banner">
     <div class="grid-container">
@@ -85,7 +84,6 @@
     </div>
 
     <div class="board-square">
-        {% for free_boards in free_boards %}
         <div class="square-box">
             <div class="thin-box-01">
                 <h3>자유게시판</h3>
@@ -94,20 +92,19 @@
 
             <div class="thin-box-02">
                 <div class="thin-box">
-                    <a href="{% url 'free_detail' free_boards.id %}">{{ free_boards.title }}</a>
-
                 </div>
             </div>
 
             <div class="thin-box-02">
-                <div class="thin-box"></div>
+                <div class="thin-box">
+                </div>
             </div>
 
             <div class="thin-box-02">
-                <div class="thin-box"></div>
+                <div class="thin-box">
+                </div>
             </div>
         </div>
-    {% endfor %}
 
         <div class="square-box">
             

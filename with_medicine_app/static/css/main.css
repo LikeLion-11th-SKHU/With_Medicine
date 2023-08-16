@@ -3,39 +3,37 @@ body {
     font-family: Arial, sans-serif; /* 원하는 폰트 설정 */
 }
 
+/* topmenu.css 파일 */
 #topmenu {
-    width: 95%; /* 너비를 화면 가득 차도록 설정 */
-    background-color: #ffffff; /* 배경색 설정 */
-    height: 45px; /* 높이 조정 */
-    margin-top: 20px; /* 상단과 메뉴 사이 간격 조정*/
+    width: 80%;
+    background-color: #ffffff;
+    height: auto;
+    padding: 10px;
     display: flex;
-    justify-content: space-between; /* 메뉴 항목 간 간격을 최대한 확보하기 위한 설정 */
+    justify-content: space-between;
     align-items: center;
-    padding: 0 15px; /* 좌우 여백 추가 */
+    flex-wrap: wrap;
 }
 
 #topmenu img {
-    width: 145px; /* 너비를 화면 가득 차도록 설정 */
-    height: 65px; /* 높이 조정 */
-    display: flex;
-    justify-content: space-between; /* 메뉴 항목 간 간격을 최대한 확보하기 위한 설정 */
-    align-items: center;
-    padding: 0 15px; /* 좌우 여백 추가 */
+    width: 145px;
+    height: auto;
+    padding: 0 15px;
 }
 
 #topmenu ul {
-    margin: 0; /* 내비게이션 메뉴의 기본 마진 제거 */
-    padding: 0; /* 내비게이션 메뉴의 기본 패딩 제거 */
-    list-style: none; /* 리스트 스타일 제거 */
-    display: flex; /* 내비게이션 메뉴를 가로로 배치하기 위한 flex 설정 */
-    align-items: center; /* 메뉴 항목 수직 중앙으로 정렬 */
-    height: 100%; /* 내비게이션 메뉴 높이를 상위 컨테이너와 동일하게 설정 */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
     overflow: auto;
-    margin-left: 180px;
+    margin-left: 10px;
+    width: 100%;
 }
 
 #topmenu li {
-    margin: 0 10px; /* 각 메뉴 항목의 좌우 간격 조정 */
+    margin: 0 10px;
 }
 
 #topmenu .menulink {
@@ -43,24 +41,30 @@ body {
     font-size: 15px;
     font-weight: bold;
     color: black;
-    padding: 8px 15px; /* 메뉴 항목의 내부 여백 조정 */
+    padding: 8px 15px;
+    white-space: nowrap;
 }
 
 #topmenu .menulink:hover {
-    color: rgb(0 102 255); /* 마우스 오버 시 글자색 변경 */
+    color: rgb(0 102 255);
 }
 
-/* 회원가입&로그인 메뉴 스타일 */
 #login-signup {
     display: flex;
-    align-items: center; /* '회원가입|로그인' 세로, 가운데 정렬 */
-    margin-left: 350px;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    padding: 0 20px;
+    max-width: 300px;
+    margin-left: auto; /* 로고와 메뉴바 간의 공간을 최대한 확보 */
 }
 
 #login-signup-text {
     font-size: 15px;
-    margin-left: 10px; /* 메뉴와 텍스트 간격 조정 */
+    margin-left: 10px;
 }
+
+
 
 
 
@@ -91,7 +95,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 850px;
-    margin-left: 400px;
+    margin-left: 20%;
 }
 
 .search-form-main input[type="search"] {
@@ -99,7 +103,8 @@ body {
     border: none;
     border-radius: 25px;
     font-size: 16px;
-    width: 450px;
+    width: 40%;
+    text-align: center;
 }
 
 .search-form-main button {
@@ -156,7 +161,7 @@ body {
     width: 100%;
     max-height: 180px;
     object-fit: contain;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0; /* 상단 모서리만 둥글게 처리 */
 }
 
 .image-name {
@@ -246,27 +251,27 @@ body {
 /* 전문의 */
 .profiles {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 40px;
+    flex-direction: row;
+    justify-content: center; /* 수직 가운데 정렬 */
+    align-items: center; /* 수평 가운데 정렬 */
+    margin-top: 50px; /* 카드 위쪽과의 간격을 설정합니다. */
+    flex-wrap: wrap; /* 내용이 너비를 벗어날 경우 다음 줄로 넘어가도록 설정 */
+    gap: 20px; /* 카드 간격을 조정합니다. */
 }
 
 .profile {
     display: flex;
-    align-items: center;
-    width: 30%;
-    height: 200px;
-    border: 1px solid #ccc;
-    border-radius: 15%;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 35px;
-    margin-bottom: 45px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.profile:hover {
-    transform: translateY(-5px);
+    gap: 5%;
+    flex-direction:  row;
+    align-items: la baseline; /* 카드 내용을 수평 왼쪽  정렬 */
+    max-width: 400px; /* 최대 너비를 설정하여 반응형 처리 */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    text-align: center;
+    margin-right: 13px;
+    border: 1px solid #cecece;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
 }
 
 .profile-image img {
@@ -274,17 +279,14 @@ body {
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    margin-left: 20px;
-    margin-right: 40px;
-}
-
-.profile-info {
-    flex: 1;
+    margin-left: 10px;
 }
 
 .profile-info h3 {
     margin: 0;
     font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
 }
 
 .profile-info p {
@@ -336,4 +338,84 @@ body {
     margin: 10px;
     list-style: none;
     margin-right: 80px;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+
+    .search-form-main {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 20px; /* 좌우 여백 추가 */
+        box-sizing: border-box; /* 패딩까지 포함하여 너비 조절 */
+    }
+
+    .search-form-main input[type="search"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .search-form-main button {
+        width: 40%;
+        margin-top: 10px;
+    }
+
+    .board-section {
+        margin: 10px;
+    }
+
+    .board-square {
+        display: block; /* 세로 배치로 변경 */
+        height: auto; /* 높이를 자동으로 설정하여 내용에 맞게 조정 */
+        gap: 20px; /* 게시판 카드 사이의 간격을 20px로 설정 */
+    }
+
+    .square-box {
+        width: 90%; /* 너비를 화면 가득 차도록 설정 */
+        margin-top: 30px; /* 상단과의 간격 조정 */
+    }
+
+    .thin-box-01,
+    .thin-box-02 {
+        margin: 0 20px; /* 좌우 여백을 설정하여 카드가 너무 붙어있지 않게 함 */
+        margin-top: 3px; /* 상단과의 간격 조정 */
+    }
+
+    .thin-box,
+    .thin-box-board {
+        width: 90%; /* 너비를 화면 가득 차도록 설정 */
+        margin-left: 10px; /* 왼쪽 여백 제거 */
+    }
+
+    .board-body {
+        width: 90%; /* 너비를 화면 가득 차도록 설정 */
+        height: auto; /* 높이를 자동으로 설정하여 내용에 맞게 조정 */
+    }
+
+    .profile-specialist {
+        max-width: 100%; /* 모바일 화면에서 카드가 전체 너비를 차지하도록 설정 */
+        margin: 0 10px; /* 좌우 여백을 설정하여 카드가 너무 붙어있지 않게 함 */
+    }
+
+    .f_box {
+        margin-top: 100px;
+    }
+
+    #bottom_menu ul {
+        margin-left: 0;
+        justify-content: space-around;
+    }
+
+    .items_block {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .items {
+        max-width: 100%;
+        text-align: center;
+        font-size: 8px;
+    }
 }
