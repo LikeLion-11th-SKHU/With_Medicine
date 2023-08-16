@@ -44,7 +44,8 @@ body {
     text-align: center;
     color:#0064FF ;
 }
-/* 사이드바 */
+/* 메인_사이드바 */
+
 .side_bar_container{
     flex: 1;
     margin-right: 20px;
@@ -82,10 +83,38 @@ body {
 .container{
     flex: 2;
     padding: 20px;
-    border-radius: 10px;
-    
+    border-radius: 10px;    
     padding: 20px;
+    margin: auto; /*중앙 정렬*/
+    
 }
+b{
+    display: block; /*수직 정렬하기 */
+    margin-bottom: 5px;
+}
+input{
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #0064FF;
+}
+textarea{
+    border-radius: 10px;
+    border: 1px solid #0064FF;
+}
+/* 버튼 */
+.btn{
+    width: 100px;
+    height: 50px;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    background-color: #0064FF;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold ;
+    margin-top: 10px;
+}
+
 
 /* footer css */
 .f_box{

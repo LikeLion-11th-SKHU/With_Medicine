@@ -88,6 +88,19 @@ body {
     padding: 20px;
 }
 
+/* 버튼 */
+input{
+    width: 100px;
+    height: 50px;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    background-color: #0064FF;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold ;
+    margin-top: 10px;
+}
 
 /* footer css */
 .f_box{
