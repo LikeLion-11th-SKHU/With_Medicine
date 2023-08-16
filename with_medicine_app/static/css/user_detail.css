@@ -33,16 +33,59 @@ body {
 #topmenu .menulink:hover {
     color: rgb(0 102 255); /* 마우스 오버 시 글자색 변경 */
 }
-
-/* 회원가입&로그인 메뉴 스타일 */
-#login-signup {
-    margin-left: 350px;
+/* 메인 */
+.main-container {
     display: flex;
-    align-items: center; /* '회원가입|로그인' 세로, 가운데 정렬 */
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 20px;
 }
-#login-signup-text {
-    font-size: 10px;
-    margin-right: 5px; /* 메뉴와 텍스트 간격 조정 */
+.title{
+    text-align: center;
+    color:#0064FF ;
+}
+/* 사이드바 */
+.side_bar_container{
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+    height: 100%;
+    border-radius: 10px;
+}
+.side_bar_container ul{
+    margin: 0; /* 내비게이션 메뉴의 기본 마진 제거 */
+    padding: 0; /* 내비게이션 메뉴의 기본 패딩 제거 */
+    list-style: none; /* 리스트 스타일 제거 */
+    display: block; /* 내비게이션 메뉴를 세로로 배치하기 위한 flex 설정 */   
+    justify-content: space-between;
+    align-items: center; /* 메뉴 항목 수직 중앙으로 정렬 */
+    height: 100%; /* 내비게이션 메뉴 높이를 상위 컨테이너와 동일하게 설정 */
+}
+.side_bar_container li{
+  
+   
+   height: 100px;
+}
+.side_bar_container .side_menu{
+    text-decoration: none;
+    font-weight: bold; 
+    font-size: 30px;
+    color: black;
+    padding: 8px 25px; /* 메뉴 항목의 내부 여백 조정 */
+}
+.side_bar_container .side_menu:hover{
+    
+    color: rgb(0 102 255); /* 마우스 오버 시 글자색 변경 */
+}
+
+
+/* 정보 */
+.container{
+    flex: 2;
+    padding: 20px;
+    border-radius: 10px;
+    
+    padding: 20px;
 }
 
 

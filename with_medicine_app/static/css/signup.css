@@ -63,7 +63,7 @@ body{
 .member{
     /* 회원가입 전체 폼 조정 */
     width: 60%;
-    height: 700px;
+    height: 800px;
     margin: auto; /*중앙 정렬*/
     padding: 0 20px;
     margin-bottom: 20px;

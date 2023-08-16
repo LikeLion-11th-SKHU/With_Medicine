@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
     {% block title %}
-    <link rel="stylesheet" href="{% static 'css/signup_welcome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/my_health.css' %}">
     <title>login</title>
     {% endblock %}
 </head>
@@ -20,27 +20,41 @@
                 <li><a class="menulink" href="{% url 'free_read' %}">자유게시판</a></li>
                 <li><a class="menulink" href="{% url 'review_read' %}">리뷰게시판</a></li>
             </ul>
-
-          
         </nav>
     </header>      
-     {% block content %}
-     <main>
-        <form method="POST" class="container">
-            {% csrf_token %}
-            <div class="profile">
-                <img src="/with_medicine_app/static/img/welcome.png" alt="">
-                <div class="field">
-                    {{ user.name }} 회원님 회원가입이 완료되었습니다.
-                </div>
-            </div>
-            
-           
-         </form>
-     </main>
-     
- 
-     <footer>
+{% block content %}
+    <h1>My_health Page</h1>
+    <hr>
+    <main class="nain-container">
+        <div class="side_bar_container"> <!--사이드바-->
+            <ul>
+                <li><a class="side_menu01" href="{% url 'user_detail' user.pk %}">나의 정보</a></li>
+                <li><a class="side_menu02" href="{% url 'my_health' %}">나의 건강</a></li>
+                <li><a class="side_menu03" href="{% url 'my_posts' %}">나의 리뷰</a></li>
+            </ul>
+        </div>
+    <form method="post" class="container">
+        {% csrf_token %}
+        
+        <b>키</b>
+        {{ form.height }} 
+        <b>몸무게</b>
+        {{ form.weight }} 
+        <b>병력사항</b>
+        {{ form.medical_history }} 
+
+
+        <button type="submit">저장</button>
+    </form>
+
+    {% if health_info %}
+        <p>키 : {{ health_info.height }}</p>
+        <p>몸무게: {{ health_info.weight }}</p>
+        <p>기타 병력: {{ health_info.medical_history }}</p>
+    {% endif %}
+    </main>
+
+    <footer>
         <div class="f_box">
             <nav id="bottom_menu">
                 <ul>
@@ -77,6 +91,4 @@
             </div>      
             </div> <!-- box -->
      </footer>
-     {% endblock %}
-    
-    
+{% endblock %}

@@ -97,6 +97,32 @@ body {
 }
 
 
+/* 마이페이지 아이콘 이미지 */
+.mypage_icon{
+      
+    width:30px;
+    height: 30px;
+    border-radius: 18px;
+    border-radius: 18px;
+    padding: 10px;
+    margin: 20px; /* 아이콘과 텍스트 간격을 추가 */
+}           
+
+.user-logout{
+    display: flex;
+    align-items: center; /* 텍스트를 수직 가운데로 정렬 */
+    text-align: center;
+}
+.user-logout p {
+    font-weight: bold;
+    color: black;
+    font-size: 12px; /* 글씨 크기 설정 */
+}
+.user-logout a{
+    text-decoration-line: none ;
+    color: #0064FF;
+    font-weight: bold;
+}
 /* footer css */
 .f_box{
     background-color: rgb(32,88,169);

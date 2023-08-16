@@ -2,6 +2,7 @@ body {
     margin: 0; /* 페이지의 기본 마진 제거 */
     font-family: Arial, sans-serif; /* 원하는 폰트 설정 */
 }
+/* 메뉴바 */
 #topmenu {
     width: 100%; /* 너비를 화면 가득 차도록 설정 */
     background-color: #ffffff; /* 배경색 설정 */
@@ -32,37 +33,90 @@ body {
 #topmenu .menulink:hover {
     color: rgb(0 102 255); /* 마우스 오버 시 글자색 변경 */
 }
-
-.container{
-    width:100%;
+/* 메인 */
+.main-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    padding: 0 20px;
-   
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 20px;
 }
-
-.field{
-    display:flex;
-    margin:20px;
-    font-size: 15px;
-    font-weight: bold;
+.title{
+    text-align: center;
+    color:#0064FF ;
+}
+/* 메인의 사이드바 */
+.side_bar_container{
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+    height: 100%;
+    border-radius: 10px;
+}
+.side_bar_container ul{
+    margin: 0; /* 내비게이션 메뉴의 기본 마진 제거 */
+    padding: 0; /* 내비게이션 메뉴의 기본 패딩 제거 */
+    list-style: none; /* 리스트 스타일 제거 */
+    display: block; /* 내비게이션 메뉴를 세로로 배치하기 위한 flex 설정 */   
+    justify-content: space-between;
+    align-items: center; /* 메뉴 항목 수직 중앙으로 정렬 */
+    height: 100%; /* 내비게이션 메뉴 높이를 상위 컨테이너와 동일하게 설정 */
+}
+.side_bar_container li{
+  
+   
+   height: 100px;
+}
+.side_bar_container .side_menu{
+    text-decoration: none;
+    font-weight: bold; 
+    font-size: 30px;
     color: black;
-    justify-content: center;
-   
+    padding: 8px 25px; /* 메뉴 항목의 내부 여백 조정 */
+}
+.side_bar_container .side_menu:hover{
+    
+    color: rgb(0 102 255); /* 마우스 오버 시 글자색 변경 */
 }
 
+/* 회원정보 수정 */
+.container{
+    flex: 2;
+    padding: 20px;
+    border-radius: 10px;    
+    padding: 20px;
+}
 
-/* 마이페이지 아이콘 */
-.mypage_icon{
-    display: flex;
-    width:36px;
-    height:36px;
-    border-radius: 18px;
-}           
+/* 버튼 */
 
-/* 나의 약통 아이콘(백엔드 무리여서 안 할 예정) */
+/* 수정하기 버튼 */
+.btn01{
+    width: 100px;
+    height: 50px;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    background-color: #0064FF;
+    color: white;
+    font-size: 18px;
+    font-weight: bold ;
+}
+
+/* 돌아가기 버튼 */
+.btn02 a{
+    text-decoration: none;
+    color: white;
+}
+button{
+    width: 100px;
+    height: 50px;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    background-color: #0064FF;
+   
+    font-size: 18px;
+    font-weight: bold ;
+}
 
 /* footer css */
 .f_box{

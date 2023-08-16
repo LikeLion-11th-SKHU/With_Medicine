@@ -72,11 +72,7 @@ title {
     border: 1px solid black;
 }
 
-.input-field-01 input::placeholder {
-     /* 적용이 안돼... */
-    color: black;
-    content: "아이디";
-}
+
 
 .input-field-01{
     /* 아이디 조정 */
@@ -100,11 +96,7 @@ title {
     
 }
 
-.input-field-02 input::placeholder::before {
-    /* 적용이 안돼... */
-    color: black;
-    content: "비밀번호";
-}
+
 .input-field-02{
     /* 비밀번호 조정 */
     margin-top: 20px;

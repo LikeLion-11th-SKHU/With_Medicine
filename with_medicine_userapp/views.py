@@ -5,11 +5,16 @@ from django.contrib import auth
 from .models import CustomUser
 from django.contrib.auth import update_session_auth_hash  # 비밀번호 변경 시 로그아웃 되지 않도록
 from .forms import CustomUserCreationForm, CustomUserChangeForm
+from with_medicine_free.models import Free_board
+from with_medicine_review.models import  Review_board
+from django.contrib.auth.decorators import login_required
+from .forms import HealthInfoForm
+from .models import HealthInfo
 
 # Create your views here.
 def signup(request):
     if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST, request.FILES)
         if form.is_valid():
             user = form.save()
             auth.login(request, user)  # 회원가입 후 바로 로그인?
@@ -68,3 +73,29 @@ def change_password(request):
 
 def signup_welcome(request):
     return render(request, 'signup_welcome.html')
+
+@login_required
+def my_posts(request):
+    user = request.user
+    free_my_posts = Free_board.objects.filter(user=user).order_by('-pub_date')
+    review_my_posts = Review_board.objects.filter(user=user).order_by('-pub_date')
+    return render(request, 'my_posts.html', {'free_my_posts':free_my_posts, 'review_my_posts': review_my_posts})
+ 
+def my_health(request):
+    return render(request, 'my_health.html')     
+
+@login_required
+def my_health(request):
+    user = request.user
+    health_info = user.health_info if hasattr(user, 'health_info') else None
+    
+    if request.method == 'POST':
+        form = HealthInfoForm(request.POST, instance=health_info)
+        if form.is_valid():
+            health_info = form.save(commit=False)
+            health_info.user = user
+            health_info.save()
+            return redirect('my_health')
+    else:
+        form = HealthInfoForm(instance=health_info)
+    return render(request, 'my_health.html', {'form':form, 'health_info':health_info})

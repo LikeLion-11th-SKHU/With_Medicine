@@ -22,9 +22,14 @@
      <div id="login-signup"> <!---회원가입&로그인 작성 칸-->
         <span id="login-signup-text">
     {% if user.is_active %}
-        {{ user.username }} 님 안녕하세요 <a href="{% url 'logout' %}">로그아웃</a>
-        
-        <div class="mypage_icon"><a href="{% url 'user_detail' user.pk %}"><img src="/with_medicine_app/static/img/test.png" alt=""></a></div>
+        <div class="group01">
+        <div class="mypage_icon">
+            <a href="{% url 'user_detail' user.pk %}"><img src="/with_medicine_app/static/img/test.png" alt=""></a>
+        </div>
+        <div class="user-logout">
+           <p> {{ user.username }} 님 안녕하세요 <a href="{% url 'logout' %}">로그아웃</a></p>
+        </div>
+        </div>    
        
         {% else %}
         <a class="menulink" href="{% url 'signup' %}">회원가입</a>
