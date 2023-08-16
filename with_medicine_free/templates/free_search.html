@@ -1,4 +1,16 @@
 {% extends 'free_read.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <link rel="stylesheet" href="{% static 'css/free_search.css' %}" type = "text/css"> <!-- css 파일 연결 -->
+    {% endblock %}
+    <title>free_search</title>
+</head>
 
 {% block content %}
 
@@ -8,13 +20,24 @@
 
     {% else %}
 
+    <div id="search-main">
+        <div id="search-01">
+            <form class="search-form-main" method="post">
+                {% csrf_token %}
+                <input type="search" placeholder="의약품명, 증상, 성분명을 입력하세요." aria-label="Search" name="q" value="{{q}}">
+                <button class="btn-outline-success" type="submit">검색</button>
+            </form> 
+        </div>
+    </div>
+
         {% for free_board in free_board.all %}
         <div class="container"> 
             <div class="card">
                 <div class="card-body">
+                    {% csrf_token %}
                     <h1>{{ free_board.title }}</h1>
                     <p>{{ free_board.pub_date | date:"Y-m-d" }}</p>
-                    <p>{{ free_board.body }}<a href="{% url 'free_detail' free_board.id %}"> ...자세히 보기</a></p> 
+                    <p>{{ free_board.body }}<a href="{% url 'free_detail' free_board.id %}"> ... 더보기</a></p> 
                 </div>
             </div>
         </div>

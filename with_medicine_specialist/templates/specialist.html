@@ -1,0 +1,81 @@
+{% extends 'main.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <link rel="stylesheet" href="{% static 'css/specialist.css' %}" type = "text/css"> <!-- css 파일 연결 -->
+    {% endblock %}
+    <title>Fspecialist</title>
+</head>
+
+<body>
+    <main>
+        {% block content %}
+
+        <div id="specialist-banner">
+            <div class="banner-content-specialist">
+                <h1>전문의와 연결해드려요!</h1>
+            </div>
+        </div>
+
+        <div class="profiles-specialist">
+            <div class="profile-specialist">
+                <div class="profile-image-specialist">
+                    <img src="{% static 'img/profile-01.jpg' %}" alt="Profile Image">
+                </div>
+                <div class="profile-info-specialist">
+                    <h3>한소희</h3>
+                    <p>새로운 병원 신경외과 전문의 원장</p>
+                    <p>전문 분야 : 신경외과</p>
+                </div>
+            </div>
+            <div class="profile-specialist">
+                <div class="profile-image-specialist">
+                    <img src="{% static 'img/profile-02.jpg' %}" alt="Profile Image">
+                </div>
+                <div class="profile-info-specialist">
+                    <h3>소희한</h3>
+                    <p>새로운 병원 소아과 전문의 원장</p>
+                    <p>전문 분야 : 소아과</p>
+                </div>
+            </div>
+            <div class="profile-specialist">
+                <div class="profile-image-specialist">
+                    <img src="{% static 'img/profile-03.jpg' %}" alt="Profile Image">
+                </div>
+                <div class="profile-info-specialist">
+                    <h3>김유정</h3>
+                    <p>새로운 병원 정형외과 전문의 원장</p>
+                    <p>전문 분야 : 정형외과</p>
+                </div>
+            </div>
+            <div class="profile-specialist">
+                <div class="profile-image-specialist">
+                    <img src="{% static 'img/profile-02.jpg' %}" alt="Profile Image">
+                </div>
+                <div class="profile-info-specialist">
+                    <h3>소희한</h3>
+                    <p>새로운 병원 소아과 전문의 원장</p>
+                    <p>전문 분야 : 소아과</p>
+                </div>
+            </div>
+            <div class="profile-specialist">
+                <div class="profile-image-specialist">
+                    <img src="{% static 'img/profile-03.jpg' %}" alt="Profile Image">
+                </div>
+                <div class="profile-info-specialist">
+                    <h3>김유정</h3>
+                    <p>새로운 병원 정형외과 전문의 원장</p>
+                    <p>전문 분야 : 정형외과</p>
+                </div>
+            </div>
+        </div>
+{% endblock %} 
+
+
+</main>
+</body>

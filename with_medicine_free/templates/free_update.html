@@ -1,17 +1,36 @@
 {% extends 'main.html' %}
+{% load static %}
 
-{% block title %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <link rel="stylesheet" href="{% static 'css/free_update.css' %}" type = "text/css"> <!-- css 파일 연결 -->
+    {% endblock %}
     <title>Free_Update</title>
-{% endblock %}
+</head>
 
+<main>
 {% block content %}
-    <h1>Free_Update Page</h1>
-    <hr>
-    <form method="POST">
-        {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
-        <button type = "submit">작성</button>
+    <h2>글 수정하기</h2>
+    <hr />
+
+    <form method="post" class="free-update">
+        
+        <div class="update-form-01">
+            {{ form.title }}
+        </div>
+        
+        <div class="update-form-02">
+            {{ form.body }}
+        </div>
+
+        <div id="submit">
+        <button  id="blue" type = "submit">작성</button>
+        </div>
+
     </form>
+    </main>
 {% endblock %}

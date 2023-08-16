@@ -1,69 +1,92 @@
 {% extends 'main.html' %}
+{% load static %}
+
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <link rel="stylesheet" href="{% static 'css/free_read.css' %}" type = "text/css"> <!-- css 파일 연결 -->
+    {% endblock %}
     <title>Free_read</title>
 </head>
 
+
 <body>
-    {% block content %}
-    <h1>Free_read</h1>
-    <hr>
+    <main>
+        {% block content %}
+        <!--자유 게시판 모음-->
+        <h2>자유 게시판</h2>
+        <div id="search-free">
+        <div id="search">
+            <form class="search-form" action="{% url 'free_search' %}" method="post">
+                {% csrf_token %}
+                <input type="search" placeholder="게시글 검색하기" aria-label="Search" name="q" value="{{q}}">
+                <button class="btn-outline-success" type="submit">검색</button>
+            </form> 
+        </div>
+    </div>
+        <hr />
+
+        <!-- 게시판 리스트 목록 -->
+        <table class="sub_news" cellspacing="0" summary="게시판의 글 제목 리스트">
+            <caption> 게시판 리스트 </caption>
+            <colgroup>
+                    <col width="80">
+                    <col width="300">
+                    <col width="100">
+                    <col width="150">
+            </colgroup>
+
+            <thead> <!-- 표 머리글-->
+                <tr>
+                    <th scope="col">제목</th>
+                    <th scope="col">내용</th>
+                    <th scope="col">작성자</th>
+                    <th scope="col">날짜</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 게시판 등록글 tr-->
+                <tr>     
+                {% for free_board in free_board reversed %} 
+                    <td class="title">
+                    <a href="{% url 'free_detail' free_board.id %}"> {{ free_board.title }}</a></td>
+                    <td class="body">{{ free_board.body }}</td>
+                    <td class="name">{{ user.username }}</td>
+                    <td class="date">{{ free_board.pub_date }}</td>
+                </td>
+            </tr>
+        {% endfor %}
+            </tbody>
+            </table>
+        
+
+
+<div id="submit">
+<button id="blue" type="submit" onclick="location.href = '{% url 'free_create' %}'">글쓰기</button>
+</div> 
+
+
+    <!-- <div class="pagination">
+        <button class="prev-btn" onclick="goToPrevPage()"><img src="img/next.png"></button>
+        <span class="current-page">1</span>
+        <button class="next-btn" onclick="goToNextPage()"><img src="img/next.png"></button>
+    </div> -->
+
+
+    {% comment %}
+    <a href="{% url 'free_create' %}">글 작성하기</a> {% endcomment %}
+{% endblock %} 
+
+
   
-    <a href="{% url 'free_create' %}">글 작성하기</a>
+</main>
 
-    <form class="form-inline my-2 my-lg-0" action="{% url 'free_search' %}" method="post">
-            {% csrf_token %}
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{q}}">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-<!-- read_list -->
-        <table>
-                <tr>
-                    <th>제목</th>
-                    <th>작성자</th>
-                    <th>작성일</th>
-                </tr>
-            {% for free_board in free_board %}
-                <tr>
-                    <td>
-                        <a href="{% url 'free_detail' free_board.id %}">{{ free_board.title }}</a>
-                    </td>
-                    <!-- 추후에 td user정보로 변경할 것 -->
-                    <td>{{ free_board.user }}</td>
-                    <td>{{ free_board.pub_date }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-<!-- read_list_end -->
 
-<!-- 페이징처리 -->
-        <div>
-    <!-- default/back_page_number 설정-->
-            {% if free_board.has_previous %}
-            <a href="?page=1"">처음으로</a>
-            <a href="?page={{ free_board.previous_page_number }}">이전</a>
-            {% endif %}
-    <!-- page_list 설정-->
-            {% for page in free_board.paginator.page_range %}
-            {% if page >= free_board.number|add:-3 and page <= free_board.number|add:3 %} 
-            {% if page == free_board.number %}
-                <span><a href="?page={{ page }}">{{ page }}</a></span>
-            {% else %}
-                <a href="?page={{ page }}">{{ page }}</a>
-            {% endif %}
-            {% endif %}
-            {% endfor %} 
-    <!-- next_page 설정 -->
-            {% if free_board.has_next %}
-            <a href="?page={{free_board.next_page_number }}">다음</a>
-            <a href="?page={{ free_board.paginator.num_pages }}">끝으로</a>
-            {% endif %}
-            </div>
-<!-- 페이징 끝 -->
-{% endblock %}
+
+</div>
 </body>
 </html>

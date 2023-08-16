@@ -1,0 +1,84 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <link rel="stylesheet" href="{% static 'css/medicines.css' %}" type = "text/css"> <!-- css 파일 연결 -->
+    {% endblock %}
+    <title>Free_read</title>
+</head>
+
+
+<body>
+    <main>
+        {% block content %}
+        <form class="search-form-med" method="post">
+            {% csrf_token %}
+            <input type="search" placeholder="의약품명, 증상, 성분명을 입력하세요." name="q" value="{{q}}">
+            <button type="submit-med">검색</button>
+        </form>
+
+    <!-- 약 페이지 -->
+<div id="med-banner">
+    <div class="grid-container-med">
+        <div class="grid-item-med">
+            <img src="../static/img/pills1.png" alt="이미지 1">
+            <div class="image-name-med">제포정 / 현대약품 / Lornoxicam 4mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="../static/img/pills2.png" alt="이미지 2">
+            <div class="image-name-med">제포정 / 현대약품 /  Lornoxicam 8mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="../static/img/pills3.png" alt="이미지 3">
+            <div class="image-name-med">뉴시캄캡슐 15mg / 신풍제약 /  Meloxicam 15mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="../static/img/pills4.png" alt="이미지 4">
+            <div class="image-name-med">제포정 / 현대약품 /  Lornoxicam 8mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="../static/img/pills1.png" alt="이미지 1">
+            <div class="image-name-med">제포정 / 현대약품 / Lornoxicam 4mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="../static/img/pills2.png" alt="이미지 2">
+            <div class="image-name-med">제포정 / 현대약품 /  Lornoxicam 8mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="../static/img/pills3.png" alt="이미지 3">
+            <div class="image-name-med">뉴시캄캡슐 15mg / 신풍제약 /  Meloxicam 15mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="../static/img/pills4.png" alt="이미지 4">
+            <div class="image-name-med">제포정 / 현대약품 /  Lornoxicam 8mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="../static/img/pills1.png" alt="이미지 1">
+            <div class="image-name-med">제포정 / 현대약품 / Lornoxicam 4mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="../static/img/pills2.png" alt="이미지 2">
+            <div class="image-name-med">제포정 / 현대약품 /  Lornoxicam 8mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="../static/img/pills2.png" alt="이미지 2">
+            <div class="image-name-med">제포정 / 현대약품 /  Lornoxicam 8mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="../static/img/pills3.png" alt="이미지 3">
+            <div class="image-name-med">뉴시캄캡슐 15mg / 신풍제약 /  Meloxicam 15mg</div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
+
+
+</main>
+</body>
+</html>

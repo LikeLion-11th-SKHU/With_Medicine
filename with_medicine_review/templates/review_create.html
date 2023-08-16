@@ -1,17 +1,35 @@
 {% extends 'main.html' %}
+{% load static %}
 
-{% block title %}
-    <title>Review_create</title>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <link rel="stylesheet" href="{% static 'css/review_create.css' %}" type = "text/css"> <!-- css 파일 연결 -->
+    {% endblock %}
+    <title>review_create</title>
+</head>
 
-{% block content %}
-    <h1>Review_create Page</h1>
-    <hr>
-    <form method="POST">
-        {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
-        <button type = "submit">작성</button>
+<main>
+    {% block content %}
+    {% csrf_token %}
+        <h2>리뷰게시판</h2>
+        <hr />
+    <form method="post" class="free">
+        <div class="create-form-01">
+            {{ form.title }}
+        </div>
+    
+        <div class="create-form-02">
+            {{ form.body }}
+        </div>
+    
+    <div id="submit">
+        <button id="blue" type="submit" >작성</button>
+    </div> 
+    
     </form>
-{% endblock %}
+    </main>
+    {% endblock %}

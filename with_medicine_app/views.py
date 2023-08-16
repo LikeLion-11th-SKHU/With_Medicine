@@ -1,12 +1,13 @@
 from django.shortcuts import render
-from .models import Item
-from .forms import SearchForm
+from with_medicine_free.models import Free_board
+from with_medicine_review.models import Review_board
 
 # Create your views here.
 
 def main(request):
-    return render(request, 'main.html')
-
+    free_boards = Free_board.objects.all()[:7]
+    review_boards = Review_board.objects.all()[:7]
+    return render(request, 'main.html', {'free_boards': free_boards, 'review_boards':review_boards})
 # def search_items(request):
 #     if request.method == 'GET': # http요청의 메서드가 get이라면
 #         form = SearchForm(request.GET) # get요청에서 전달된 데이터를 사용해 searchform 생성

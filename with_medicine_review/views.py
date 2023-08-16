@@ -3,26 +3,18 @@ from .forms import Review_board_Form, Review_board_CommentForm
 from django.utils import timezone
 from .models import Review_board, Review_Comment
 from django.db.models import Q
-from django.core.paginator import Paginator 
-from django.contrib.auth.decorators import login_required
-
 
 
 # Create your views here.
 def review_read(request):
-    review_board = Review_board.objects.all().order_by('-id')
-    paginator = Paginator(review_board, 5)
-    page = request.GET.get('page')
-    review_board = paginator.get_page(page)
-    return render(request, 'review_read.html', {'review_board': review_board})
+    review_board = Review_board.objects.all()
+    return render(request, 'review_read.html', {'review_board':review_board})
 
-@login_required
 def review_create(request):
     if request.method == 'POST':
         form = Review_board_Form(request.POST)
         if form.is_valid():
             form = form.save(commit = False)
-            form.user = request.user
             form.pub_date = timezone.now()
             form.save()
             return redirect('review_read')
@@ -87,13 +79,3 @@ def search(request):
     
     else:
         return render(request, 'search.html', {'review_board':review_board})
-
-def review_like(request, id):
-    if request.user.is_authenticated:
-        post = get_object_or_404(Review_board, id=id)
-        if post.like_users.filter(id=request.user.id).exists():
-            post.like_users.remove(request.user)
-        else:
-            post.like_users.add(request.user)
-        return redirect('review_detail', id=id)
-    return redirect('login')

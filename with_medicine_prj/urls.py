@@ -23,6 +23,8 @@ from django.conf.urls import include
 import with_medicine_app.views
 
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', with_medicine_app.views.main, name = 'main'),
@@ -31,5 +33,7 @@ urlpatterns = [
     path('', include('with_medicine_userapp.urls')),
     path('', include('with_medicine_free.urls')),
     path('', include('with_medicine_review.urls')),
+    path('', include('with_medicine_med.urls')),
+    path('', include('with_medicine_specialist.urls')),
     
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

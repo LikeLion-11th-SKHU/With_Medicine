@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'with_medicine_free',
     'with_medicine_review',
     'with_medicine_userapp',
+    'with_medicine_med',
+    'with_medicine_specialist',
 ]
 
 MIDDLEWARE = [
@@ -125,8 +127,6 @@ TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
-USE_L1ON = True
-
 USE_TZ = True
 
 
@@ -139,12 +139,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-AUTH_USER_MODEL = 'with_medicine_userapp.CustomUser'
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_URL)  # 이미지 등의 미디어 파일을 저장할 경로
-
-ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 
 AUTH_USER_MODEL = 'with_medicine_userapp.CustomUser'

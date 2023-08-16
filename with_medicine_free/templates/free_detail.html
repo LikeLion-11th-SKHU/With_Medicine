@@ -1,54 +1,67 @@
 {% extends 'main.html' %}
+{% load static %}
 
-{% block title %}
-    <title>Free_Detail</title>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <link rel="stylesheet" href="{% static 'css/free_detail.css' %}" type="text/css"> <!-- css 파일 연결 -->
+    {% endblock %}
+    <title>Free_detail</title>
+</head>
 
+<main>
 {% block content %}
-    <h1>Free_Detail</h1>
-    <hr>
-    <p>작성자 : {{ free_board.user }}</p>
-    <h3>제목 : {{ free_board.title }}</h3>
-    <p>작성일 : {{ free_board.pub_date }}</p>
-    <p>내용 : {{ free_board.body }}</p>
-    <br>
+    <h2>자유게시판</h2>
+    <hr />
+
+    <form method="post" class="detail">
+        <div class="detail_form_01">
+        <h2>{{ free_board.title }}</h2>
+        </div>
+
+        <div class="detail_form_02">
+        {{ user.username }}
+        </div>
+        
+        <div class="detail_form_03">
+        {{ free_board.pub_date }}
+        </div>
+
+        <hr />
+
+        <div class="detail_form_04">
+        {{ free_board.body }}
+        </div>
+    </form>
+
     <a href="{% url 'free_update' free_board.id %}">글 수정하기</a>
     <br>
     <a href="{% url 'free_delete' free_board.id %}">글 삭제하기</a>
 
-    <!--조회수 기능-->
-    <p>조회수 : {{ free_board.hits }}</p>
-    
-    
-    <!--좋아요 기능-->
-    <div>
-        <form action="{% url 'free_like' free_board.id %}" method='POST'>
-          {% csrf_token %}
-          <button style='border:none;'>
-          {% if user in free_board.like_users.all %}
-          <i class="fas fa-heart" style="color:red; font-size: 17px;"></i>
-          {% else %}
-          <i class="far fa-heart" style="color:red; font-size: 17px;"></i>
-          {% endif %}
-        </button>
-        <span>
-          {{ free_board.like_users.all|length }} 명이 이 글을 좋아합니다.
-        </span>
-      </p>
-        </form>
-      </div>
+    <hr />
 
-{% for comment in free_board.comment.all %}
-    <p>댓글:{{ comment }}</p>
-    <br>
-    <a href="{% url 'free_comment_delete' free_board.id comment.id %}">댓글 삭제하기</a>
-    <a href="{% url 'free_comment_update' free_board.id comment.id %}">댓글 수정하기</a>
-    {% endfor %}
+    <div class="comment-container">
+        {% for comment in free_board.comment.all %}
+            <div class="comment">
+                <h4>{{ comment.author }}</h4>
+                <p>{{ comment.text }}</p>
+                <div class="comment-actions">
+                    <a class="comment-delete" href="{% url 'free_comment_delete' free_board.id comment.id %}">댓글 삭제하기</a>
+                    <a class="comment-update" href="{% url 'free_comment_update' free_board.id comment.id %}">댓글 수정하기</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
  
-<form method = "POST" action = "{% url 'free_detail' free_board.id %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type = "submit">작성</button>
-</form>
-
+    <form method="post" action="{% url 'free_detail' free_board.id %}" class="form-container">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">작성</button>
+    </form>
 {% endblock %}
+</main>
+
+</html>
