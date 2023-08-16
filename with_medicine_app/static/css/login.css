@@ -116,8 +116,8 @@ title {
     background: transparent;
 }
 
-.login_etc {
-    /* 로그인 상태 유지 버튼 */
+/* .login_etc {
+    로그인 상태 유지 버튼
     padding: 20px;
     width: 80%;
     font-size: 14px;
@@ -125,7 +125,7 @@ title {
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-  }
+  } */
 
 button{
     /* 버튼모양 */
@@ -140,23 +140,28 @@ button{
     letter-spacing: 2px;
   }
   .btn{
-    margin-top: 10px;
+    margin-top: 20px;
     width: 80%;
   }
 
-  .login_etc02{
-    /* 버튼 밑에 있는 요소들 정리 */
-    padding: 10px;
-    width: 80%;
-    font-size: 14px;
+ /* Add this CSS to your existing stylesheet or create a new one */
+.login_etc02 {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    margin-top: 10px; /* Adjust the margin as needed */
+}
+
+.signup_btn {
+    margin-top: 5px;
+    text-align: center;
     font-weight: bold;
-  }
+    color: #000;
+}
+
   .login_etc02 a{
     text-decoration: none;
     color: black;
+    
   }
   
 

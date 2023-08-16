@@ -38,7 +38,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    margin: 20px;
+    margin: 10px;
 }
 .title{
     text-align: center;
@@ -47,8 +47,8 @@ body {
 /* 메인의 사이드바 */
 .side_bar_container{
     flex: 1;
-    margin-right: 20px;
-    padding: 20px;
+    margin-top: 15px;
+    padding: 15px;
     height: 100%;
     border-radius: 10px;
 }
@@ -69,9 +69,9 @@ body {
 .side_bar_container .side_menu{
     text-decoration: none;
     font-weight: bold; 
-    font-size: 30px;
+    font-size: 15px;
     color: black;
-    padding: 8px 25px; /* 메뉴 항목의 내부 여백 조정 */
+    padding: 8px 15px; /* 메뉴 항목의 내부 여백 조정 */
 }
 .side_bar_container .side_menu:hover{
     
@@ -83,7 +83,7 @@ body {
     flex: 2;
     padding: 20px;
     border-radius: 10px;    
-    padding: 20px;
+   
 }
 
 /* 버튼 */

@@ -22,7 +22,6 @@ body {
 #topmenu li {
     margin: 0 10px; /* 각 메뉴 항목의 좌우 간격 조정 */
 }
-
 #topmenu .menulink {
     text-decoration: none;
     font-size: 15px;
@@ -35,19 +34,6 @@ body {
     color: rgb(0 102 255); /* 마우스 오버 시 글자색 변경 */
 }
 /* 메인 */
-.look .click {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    color:#0064FF;
-}
-.look{
-    margin-left: 50px;
-}
-.profile{
-    margin-left: 50px;
-}
-
 .main-container {
     display: flex;
     justify-content: space-between;
@@ -58,11 +44,11 @@ body {
     text-align: center;
     color:#0064FF ;
 }
-/* 사이드바 */
+/* 메인의 사이드바 */
 .side_bar_container{
     flex: 1;
     margin-top: 15px;
-    padding-left: 15px;
+    padding: 15px;
     height: 100%;
     border-radius: 10px;
 }
@@ -84,38 +70,25 @@ body {
     text-decoration: none;
     font-weight: bold; 
     font-size: 15px;
-    
     color: black;
-    padding: 8px 15px; /* 메뉴 항목의 내부 여백 조정 */
+    padding: 8px 25px; /* 메뉴 항목의 내부 여백 조정 */
 }
 .side_bar_container .side_menu:hover{
     
     color: rgb(0 102 255); /* 마우스 오버 시 글자색 변경 */
 }
 
-
-/* 정보 */
 .container{
     flex: 2;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 10px;    
     
-  
 }
-
-/* 버튼 */
-input{
-    width: 100px;
-    height: 50px;
-    border: 0;
-    outline: none;
-    border-radius: 10px;
-    background-color: #0064FF;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: bold ;
-    margin-top: 10px;
-    margin-left: 50px;
+p{
+    color: #0064FF;
+    font-weight: bold;
+    
+    
 }
 
 /* footer css */

@@ -7,20 +7,48 @@
 {% block content %}
     <h1>Free_Detail</h1>
     <hr>
-    <h3>{{ free_board.title }}</h3>
-    <p>{{ free_board.pub_date }}</p>
-    <p>{{ free_board.body }}</p>
+    <img src={% if free_board.user.image %}"{{ free_board.user.image.url }}"{% else %}"https://i.stack.imgur.com/34AD2.jpg"{% endif %} 
+            width="150rem" style="border-radius: 50%;" alt="">
+    <p>작성자 : {{ free_board.user }}</p>
+    <h3>제목 : {{ free_board.title }}</h3>
+    <img src={% if free_board.image %}"{{ free_board.image.url }}"{% else %}""{% endif %} 
+    width = "300" alt="">
+    <p>작성일 : {{ free_board.pub_date }}</p>
+    <p>내용 : {{ free_board.body }}</p>
+    <p>조회수 : {{ free_board.hits }}</p>
     <br>
     <a href="{% url 'free_update' free_board.id %}">글 수정하기</a>
     <br>
     <a href="{% url 'free_delete' free_board.id %}">글 삭제하기</a>
 
+    <!--좋아요 기능-->
+    <div>
+        <form action="{% url 'free_like' free_board.id %}" method='POST'>
+          {% csrf_token %}
+          <button style='border:none;'>
+          {% if user in free_board.like_users.all %}
+          <i class="fas fa-heart" style="color:red; font-size: 17px;"></i>
+          {% else %}
+          <i class="far fa-heart" style="color:red; font-size: 17px;"></i>
+          {% endif %}
+        </button>
+        <span>
+          {{ free_board.like_users.all|length }} 명이 이 글을 좋아합니다.
+        </span>
+      </p>
+        </form>
+      </div>
+
 {% for comment in free_board.comment.all %}
+    <img src={% if comment.user.image %}"{{ comment.user.image.url }}"{% else %}"https://i.stack.imgur.com/34AD2.jpg"{% endif %} 
+    width="30" height="30" style="border-radius: 50%;" alt="profile_img">
+    <p>{{ comment.user }}</p>
     <p>댓글:{{ comment }}</p>
     <br>
     <a href="{% url 'free_comment_delete' free_board.id comment.id %}">댓글 삭제하기</a>
     <a href="{% url 'free_comment_update' free_board.id comment.id %}">댓글 수정하기</a>
-    {% endfor %}
+    <hr>
+{% endfor %}
  
 <form method = "POST" action = "{% url 'free_detail' free_board.id %}">
     {% csrf_token %}

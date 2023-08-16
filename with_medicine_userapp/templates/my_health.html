@@ -36,30 +36,30 @@
         </div>
         <hr>
     <div class="container">
-     <form method="post">
-        {% csrf_token %}
-        
-        <b>키</b>
-        {{ form.height }} 
-        <b>몸무게</b>
-        {{ form.weight }} 
-        <b>병력사항</b>
-        {{ form.medical_history }} 
-
-
-       
+        <form method="post">
+            {% csrf_token %}
+    
+            <b>키</b>
+            {{ form.height }} 
+            <b>몸무게</b>
+            {{ form.weight }} 
+            <b>병력사항</b>
+            {{ form.medical_history }} 
+    
+    
+            <button type="submit" class="btn">저장</button>
         </form>
-        <button type="submit" class="btn">저장</button>
-        {% if health_info %}
-            <b>키 :</b>
-                {{ health_info.height }}
-            <b>몸무게 :</b>
-                {{ health_info.weight }}
-            <b>기타 병력:</b>
-                {{ health_info.medical_history }}
-        {% endif %}
-    </div>    
-    </main>
+            {% if health_info %}
+                <b>키 :</b>
+                    {{ health_info.height }}
+                <b>몸무게 :</b>
+                    {{ health_info.weight }}
+                <b>기타 병력:</b>
+                    {{ health_info.medical_history }}
+            {% endif %}
+    
+    </div> 
+</main>
 
     <footer>
         <div class="f_box">
@@ -98,4 +98,8 @@
             </div>      
             </div> <!-- box -->
      </footer>
-{% endblock %}
+
+{% endblock %}   
+   
+
+   
