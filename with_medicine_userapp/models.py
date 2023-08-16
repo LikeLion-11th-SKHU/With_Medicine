@@ -19,8 +19,8 @@ class CustomUser(AbstractUser):
     
 class HealthInfo(models.Model):
     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE, related_name='health_info')
-    height = models.DecimalField(max_digits=4, decimal_places=2) # 소수점 2자리
-    weight = models.DecimalField(max_digits=4, decimal_places=2)
+    height = models.DecimalField(max_digits=5, decimal_places=2) # 소수점 2자리
+    weight = models.DecimalField(max_digits=5, decimal_places=2)
     medical_history = models.TextField(blank=True)
     
     def __str__(self):
