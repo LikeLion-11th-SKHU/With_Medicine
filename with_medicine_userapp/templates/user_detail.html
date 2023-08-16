@@ -44,12 +44,14 @@
                 <h3 class="form04">이메일 : {{ user.email }}</h3>
                 <h3 class="form05">성별 : {{ user.gender }}</h3>
                 <h3 class="form06">휴대전화 : {{ user.phone_number }}</h3>
-    
+            <div class="look">
             {% if request.user == user %}
-                <a href="{% url 'user_update' %}">회원 수정</a>
-                <a href="{% url 'change_password' %}">비밀번호 수정</a>
+                <a class="click" href="{% url 'user_update' %}">회원 정보 수정</a> <br>
+                <a class="click" href="{% url 'change_password' %}">비밀번호 수정</a>
+            </div>
                 <form action="{% url 'user_delete' %}" method="POST">
                     {% csrf_token %}
+            
                     <div class="btn">
                         <input type="submit" value="회원탈퇴">
                     </div>
