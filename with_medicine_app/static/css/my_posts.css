@@ -2,36 +2,66 @@ body {
     margin: 0; /* 페이지의 기본 마진 제거 */
     font-family: Arial, sans-serif; /* 원하는 폰트 설정 */
 }
-/* 메뉴바 */
+
+/* topmenu.css 파일 */
 #topmenu {
-    width: 100%; /* 너비를 화면 가득 차도록 설정 */
-    background-color: #ffffff; /* 배경색 설정 */
-    height: 45px; /* 높이 조정 */
-    margin-left: 220px;
-    margin-top: 20px; /* 상단과 메뉴 사이 간격 조정*/
+    width: 80%;
+    background-color: #ffffff;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
+#topmenu img {
+    width: 145px;
+    height: auto;
+    padding: 0 15px;
+}
+
 #topmenu ul {
-    margin: 0; /* 내비게이션 메뉴의 기본 마진 제거 */
-    padding: 0; /* 내비게이션 메뉴의 기본 패딩 제거 */
-    list-style: none; /* 리스트 스타일 제거 */
-    display: flex; /* 내비게이션 메뉴를 가로로 배치하기 위한 flex 설정 */
-    justify-content: center; /* 메뉴 항목 가운데로 정렬 */
-    align-items: center; /* 메뉴 항목 수직 중앙으로 정렬 */
-    height: 100%; /* 내비게이션 메뉴 높이를 상위 컨테이너와 동일하게 설정 */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    margin-left: 10px;
+    width: 100%;
 }
+
 #topmenu li {
-    margin: 0 10px; /* 각 메뉴 항목의 좌우 간격 조정 */
+    margin: 0 10px;
 }
+
 #topmenu .menulink {
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
     color: black;
-    padding: 8px 25px; /* 메뉴 항목의 내부 여백 조정 */
-   
+    padding: 8px 15px;
+    white-space: nowrap;
 }
+
 #topmenu .menulink:hover {
-    color: rgb(0 102 255); /* 마우스 오버 시 글자색 변경 */
+    color: rgb(0 102 255);
+}
+
+#login-signup {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    padding: 0 20px;
+    max-width: 300px;
+    margin-left: auto; /* 로고와 메뉴바 간의 공간을 최대한 확보 */
+}
+
+#login-signup-text {
+    font-size: 15px;
+    margin-left: 10px;
 }
 /* 메인 */
 .main-container {
@@ -92,9 +122,14 @@ p{
 }
 
 /* footer css */
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
 .f_box{
     background-color: rgb(32,88,169);
-    padding: 5px;
     text-align:left;
     display: inline-block;
     width: 100%;
@@ -117,7 +152,7 @@ p{
     justify-content: center;
     margin-right: 145px;
  }
- h3{
+ .footer_content {
     margin-bottom: 10px;
     margin-left: 50px;
  }
@@ -128,4 +163,33 @@ p{
     margin: 10px;
     list-style: none;
     margin-right: 80px;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+
+    
+    
+
+/*footer 반응형*/
+    .f_box {
+        margin-top: 100px;
+    }
+
+    #bottom_menu ul {
+        margin-left: 0;
+        justify-content: space-around;
+    }
+
+    .items_block {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .items {
+        max-width: 100%;
+        text-align: center;
+        font-size: 8px;
+    }
 }
