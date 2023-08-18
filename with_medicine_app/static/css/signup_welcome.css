@@ -1,0 +1,54 @@
+body {
+    margin: 0; /* 페이지의 기본 마진 제거 */
+    font-family: Arial, sans-serif; /* 원하는 폰트 설정 */
+}
+
+#login-signup-text {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.profile{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 0 20px;
+    border: none;
+    background-color: #ffffff;
+   
+}
+.welcome_img{
+    width:50%;
+    height: 50%;
+}
+.field{
+    display:flex;
+    margin:20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    justify-content: center;
+   
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    #bottom_menu ul {
+        margin-left: 0;
+        justify-content: space-around;
+    }
+
+    .items_block {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .items {
+        max-width: 100%;
+        text-align: center;
+        font-size: 8px;
+    }
+}

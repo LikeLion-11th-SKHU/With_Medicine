@@ -1,0 +1,222 @@
+body {
+    margin: 0; /* 페이지의 기본 마진 제거 */
+    font-family: Arial, sans-serif; /* 원하는 폰트 설정 */
+}
+
+#login-signup {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    padding: 0 20px;
+    max-width: 300px;
+    margin-left: auto; /* 로고와 메뉴바 간의 공간을 최대한 확보 */
+}
+
+#login-signup-text {
+    font-size: 15px;
+    margin-left: 10px;
+}
+/*member sign in*/
+
+h2{text-align: center;}
+
+body{
+   
+    font-size:14px;
+    background-color: #fff;
+    line-height: 1.5em;
+    color : #222;
+    margin: 0;
+}
+
+.member{
+    /* 회원가입 전체 폼 조정 */
+    width: 60%;
+    height: 920px;
+    margin: auto; /*중앙 정렬*/
+    padding: 0 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+@media (max-width:768px) {
+    .member{
+        width: 70%;
+    }
+}
+.form-field-01{
+    margin-top: 10px;
+}
+.form-field-01 input{
+    /* 아이디 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 95%;
+    margin-bottom: 5px;
+}
+.form-field-02 input{
+    /* 비밀번호 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 95%;
+    margin-bottom: 5px;
+}
+.form-field-03 input{
+    /* 비밀번호확인 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 95%;
+    margin-bottom: 5px;
+}
+.form-field-04 input{
+    /* 이름 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 95%;
+    margin-bottom: 5px;
+}
+.form-field-05 input{
+    /* 나이 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 95%;
+    margin-bottom: 5px;
+}
+.form-field-05 input{
+    /* 나이 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 95%;
+    margin-bottom: 5px;
+}
+.form-field-06 input{
+    /* 성별 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 95%;
+    margin-bottom: 5px;
+}
+.form-field-07 input{
+    /* 이메일 */
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 95%;
+    margin-bottom: 5px;
+}
+
+.member b{
+    /* border: 1px solid #000; */
+    display: block; /*수직 정렬하기 */
+    margin-bottom: 5px;
+}
+
+.form-field-08 input{
+    margin :5px 0; /*상하로 좀 띄워주기*/
+    border: 1px solid #dadada;
+    padding: 15px;
+    width: 95%;
+    margin-bottom: 5px;
+}
+
+.form-field-09{
+    margin :5px 0; /*상하로 좀 띄워주기*/
+  
+    width: 95%;
+    margin-bottom: 5px;
+   
+}
+
+
+
+button{
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #0064FF;
+    color:#fff
+
+}
+
+/* footer css */
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.f_box{
+    background-color: rgb(32,88,169);
+    text-align:left;
+    display: inline-block;
+    width: 100%;
+    color: #ffffff;
+    position: relative;
+    margin-top: 200px;
+ }
+ #bottom_menu ul{
+    display: flex;   
+    margin-left: 170px;
+    margin-bottom: 15px;
+    list-style: none; /* 리스트 스타일 제거 */
+ }
+ #bottom_menu li{
+    margin: 8px;
+ }
+ .items_block{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-right: 145px;
+ }
+ .footer_content {
+    margin-bottom: 10px;
+    margin-left: 50px;
+ }
+ .items{
+    margin: 0px 30px 30px 30px;
+ }
+.items li{
+    margin: 10px;
+    list-style: none;
+    margin-right: 80px;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+
+    
+    
+
+/*footer 반응형*/
+    .f_box {
+        margin-top: 100px;
+    }
+
+    #bottom_menu ul {
+        margin-left: 0;
+        justify-content: space-around;
+    }
+
+    .items_block {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .items {
+        max-width: 100%;
+        text-align: center;
+        font-size: 8px;
+    }
+}

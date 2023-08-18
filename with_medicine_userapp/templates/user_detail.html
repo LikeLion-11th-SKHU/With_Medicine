@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static 'css/user_detail.css' %}">
+<title>Profile</title>
+{% endblock %}
+
+{% block content %}
+<h1 class="title">나의 정보</h1>
+<hr>
+ <main class="main-container">
+    <div class="side_bar_container"> <!--사이드바-->
+        <ul>
+            <li><a class="side_menu" href="{% url 'user_detail' user.pk %}">나의 정보</a></li>
+            <li><a class="side_menu" href="{% url 'my_health' %}">나의 건강</a></li>
+            <li><a class="side_menu" href="{% url 'my_posts' %}">나의 리뷰</a></li>
+        </ul>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="detail_profile">
+            <img src={% if user.image %}"{{ user.image.url }}"{% else %}"https://i.stack.imgur.com/34AD2.jpg"{% endif %} style="width: 50%;" alt="">
+        </div>
+            <h3 >아이디 : {{ user.username }}</h3>
+            <h3 class="form02">이름 : {{ user.name }}</h3>
+            <h3 class="form03">나이 : {{ user.age }}</h3>
+            <h3 class="form04">이메일 : {{ user.email }}</h3>
+            <h3 class="form05">성별 : {{ user.gender }}</h3>
+            <h3 class="form06">휴대전화 : {{ user.phone_number }}</h3>
+        <div class="look">
+        {% if request.user == user %}
+            <a class="click" href="{% url 'user_update' %}">회원 정보 수정</a> <br>
+            <a class="click" href="{% url 'change_password' %}">비밀번호 수정</a>
+        </div>
+            <form action="{% url 'user_delete' %}" method="POST">
+                {% csrf_token %}
+                <div class="btn">
+                    <input type="submit" value="회원탈퇴">
+                </div>
+            </form>
+        {% endif %}
+    </div>
+ </main>
+{% endblock %}   

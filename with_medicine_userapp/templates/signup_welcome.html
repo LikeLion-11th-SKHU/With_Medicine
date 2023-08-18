@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static 'css/signup_welcome.css' %}">
+<title>signup_welcome</title>
+{% endblock %}
+
+     {% block content %}
+    <form method="POST" class="container">
+        {% csrf_token %}          
+            <div class="field">
+                {{ user.name }} 회원님 회원가입이 완료되었습니다.
+            </div>          
+    </form>
+     {% endblock %}
