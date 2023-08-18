@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Login</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Login Page</h1>
+    <hr>
+    <div class="wrap">  
+        <form method="POST" class="login-form"> <!-- login-form 클래스 추가(지우지 말기) -->
+            {% csrf_token %}
+            <h2 class="title">로그인</h2>
+            <div class="input-field-01"> <!-- 아이디 input 필드를 감싸는 div 추가(지우지 말기) -->
+                {{ form.username }}
+            </div>
+            <div class="input-field-02"> <!-- 비밀번호 input 필드를 감싸는 div 추가(지우지 말기) -->
+                
+                {{ form.password }}<!-- password1은 안됨 한번 물어보기 -->
+            </div>
+    
+            <div class="btn">
+                <button type = "submit">로그인</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

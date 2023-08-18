@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>main_search_Detail</title>
+    <link rel="stylesheet" href="{% static 'css/total_detail.css' %}" type="text/css"> <!-- css 파일 연결 -->
+    <link rel="stylesheet" href="{% static 'css/free_search.css' %}" type="text/css"> <!-- css 파일 연결 -->
+    {% endblock %}
+
+{% block content %}
+
+    {% if not free_board and not review_board %}
+        <h1>검색 결과가 없습니다</h1>
+    
+        {% else %}
+        {% if free_board %}
+        <div class="detail-container">
+            <img class="detail_logo" src="{% static 'img/free.png' %}">
+        </div>
+            {% for free_board_item in free_board %}
+            <div class="container"> 
+                <div class="card">
+                    <div class="card-body">
+                    <h1>{{ free_board_item.title }}</h1>
+                    <p>{{ free_board_item.pub_date | date:"Y-m-d" }}</p>
+                    <p>{{ free_board_item.body }}<a href="{% url 'free_detail' free_board_item.id %}"> ...자세히 보기</a></p> 
+                    </div>
+                </div>
+            </div>
+                <br>
+            {% endfor%}
+        {% endif %} 
+    
+        {% if review_board %}
+        <div class="detail-container">
+            <img class="detail_logo" src="{% static 'img/review.png' %}">
+        </div>
+            {% for review_board_item in review_board.all %}
+            <div class="container"> 
+                <div class="card">
+                    <div class="card-body">
+                    <h1>{{ review_board_item.title }}</h1>
+                    <p>{{ review_board_item.pub_date | date:"Y-m-d" }}</p>
+                    <p>{{ review_board_item.body }}<a href="{% url 'review_detail' review_board_item.id %}"> ...자세히 보기</a></p> 
+                </div>
+            </div>
+        </div>
+                <br>
+            {% endfor %} 
+        {% endif %}
+
+    {% endif %}
+{% endblock %}

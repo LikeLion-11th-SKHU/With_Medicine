@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <link rel="stylesheet" href="{% static 'css/medicines.css' %}" type = "text/css"> <!-- css 파일 연결 -->
+    <title>Medicines</title>
+    {% endblock %}
+</head>
+
+
+<body>
+    <main>
+        {% block content %}
+        <form class="search-form-med" method="post">
+            {% csrf_token %}
+            <input type="search" placeholder="의약품명, 증상, 성분명을 입력하세요." name="q" value="{{q}}">
+            <button type="submit-med">검색</button>
+        </form>
+
+    <!-- 약 페이지 -->
+<div id="med-banner">
+    <div class="grid-container-med">
+        <div class="grid-item-med">
+            <img src="{% static 'img/pills1.png' %}" alt="이미지 1">
+            <div class="image-name-med">제포정 / Lornoxicam 4mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="{% static 'img/pills2.png' %}" alt="이미지 2">
+            <div class="image-name-med">제포정 /  Lornoxicam 8mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="{% static 'img/pills3.png' %}" alt="이미지 3">
+            <div class="image-name-med">뉴시캄캡슐 15mg / Meloxicam 15mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="{% static 'img/pills4.png' %}" alt="이미지 4">
+            <div class="image-name-med">제포정 / Lornoxicam 8mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="{% static 'img/pills5.png' %}" alt="이미지 5">
+            <div class="image-name-med">제포정 / Lornoxicam 4mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="{% static 'img/pills6.png' %}" alt="이미지 6">
+            <div class="image-name-med">부루펜정 / Ibuprofen 200mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="{% static 'img/pills8.png' %}" alt="이미지 7">
+            <div class="image-name-med">캐롤에프정 / Ibuprofen arginine 368.9mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="{% static 'img/pills9.png' %}" alt="이미지 8">
+            <div class="image-name-med">모드나캡슐 / Acetaminophen 200mg</div>
+        </div>
+        <div class="grid-item-med">
+            <img src="{% static 'img/pills10.png' %}" alt="이미지 9">
+            <div class="image-name-med">미놀에프트로키 / Cetylpyridinium Chloride Hydrate</div>
+        </div>
+
+    </div>
+</div>
+{% endblock %} 
+
+
+</main>
+</body>
+</html>
